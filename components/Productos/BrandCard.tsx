@@ -11,7 +11,7 @@ interface Props {
     logo: string;
     color: string;
     glow: string;
-    products: number;
+    products?: number;
   };
 
   onClick: () => void;
