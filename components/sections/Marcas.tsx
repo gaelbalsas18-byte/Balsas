@@ -23,7 +23,7 @@ const marcas = [
     },
     {
     nombre: "Renfert",
-    imagen: "/logos/Renfert.png",
+    imagen: "/logos/renfert.png",
      descripcion: "Comprometidos con el objetivo de simplificarte el trabajo en el laboratorio y la clinica",
     },
     {
@@ -33,32 +33,32 @@ const marcas = [
     },
     {
     nombre: "Edenta",
-    imagen: "/logos/Edenta.png",
+    imagen: "/logos/edenta.png",
     descripcion: "Presente en todo el mundo por sus instrumentos de precisíon innovadores, dando un sello de calidad ",
     },
     {
     nombre: "Zhermack",
-    imagen: "/logos/Zhermack.png",
+    imagen: "/logos/zhermack.png",
     descripcion: "Materiales y soluciones para los sectores dental, industrial y del bienestar",
     },
      {
     nombre: "Wave Dental",
-    imagen: "/logos/wave.png",
+    imagen: "/logos/Wave.png",
     descripcion: "Los dentistas ya no tienen que elegir entre rendimiento y precio, ni entre precio y disponibilidad.",
     },
     {
     nombre: "Vericom",
-    imagen: "/logos/Vericom.png",
+    imagen: "/logos/vericom.png",
     descripcion: "El lema de Vericom ha sido 'la calidad primero' Aunque todas las partes del cuerpo son importantes para el ser humano, los dientes se han considerado una de las partes más importantes de nuestro cuerpo.",
     },
     {
     nombre: "G&H",
-    imagen: "/logos/G&H.png",
+    imagen: "/logos/g&h.png",
     descripcion: "G&H Orthodontics ha encarnado una calidad y un servicio excepcionales. Como fabricante, poseemos todo lo que hacemos con un nivel de responsabilidad que no se encuentra en ningún otro lugar.",
     },
     {
     nombre: "Dentsply",
-    imagen: "/logos/Dents.png",
+    imagen: "/logos/dents.png",
     descripcion: "Dentsply Sirona a establecido un estándar global para la fabricación dental, el desarrollo tecnológico, el tratamiento digital y la educación clínica.",
     },
     {
@@ -155,3 +155,5 @@ export default function Marcas() {
             </section>
     );
 }
+
+
