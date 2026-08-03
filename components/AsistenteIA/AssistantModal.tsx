@@ -29,7 +29,6 @@ export default function AssistantModal({
           />
 
           {/* Modal */}
-
           <motion.div
             initial={{
               opacity: 0,
@@ -56,7 +55,7 @@ export default function AssistantModal({
               top-1/2
               z-[9999]
 
-              h-[90vh]
+              h-[95vh]
               w-[95vw]
               max-w-6xl
 
@@ -95,8 +94,8 @@ export default function AssistantModal({
 
                 bg-white/90
 
-                px-10
-                py-7
+                px-7
+                py-3
 
                 backdrop-blur-xl
               "
@@ -108,7 +107,7 @@ export default function AssistantModal({
                   <div
                 className="
                     flex
-                    h-20
+                    h-18
                     w-20
                     items-center
                     justify-center

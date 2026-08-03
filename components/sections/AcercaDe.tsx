@@ -21,65 +21,48 @@ export default function AcercaDe() {
                 CONTENIDO PRINCIPAL
         ====================================== */}
 
-        <div className="grid items-center gap-24 lg:grid-cols-2">
-
+        <div className="mx-auto grid max-w-5xl place-items-center gap-24 text-center">
           {/* Texto */}
-
           <FadeIn>
-
-            <span className="rounded-full bg-blue-800 px-6 py-2 font-semibold text-white">
-
+            <div className="flex flex-col items-center">
+              <span className="rounded-full bg-blue-800 px-6 py-2 font-semibold text-white">
                 ACERCA DE NOSOTROS
-
               </span>
 
-            <div>
+              <div>
+                <p className="mt-10 text-center text-xl leading-10 text-black">
+                  En Balsas Dental somos especialistas en la distribución de
+                  productos dentales de alta tecnología, colaborando con
+                  fabricantes líderes a nivel mundial para acercar innovación,
+                  calidad y confianza a clínicas, laboratorios,
+                  universidades y distribuidores en todo México.
+                </p>
 
-              <p className="mt-10 text-xl leading-10 text-black">
-
-                En Balsas Dental somos especialistas en la distribución
-                de productos dentales de alta tecnología, colaborando con
-                fabricantes líderes a nivel mundial para acercar innovación,
-                calidad y confianza a clínicas, laboratorios,
-                universidades y distribuidores en todo México.
-
-              </p>
-
-              <p className="mt-8 text-lg leading-9 text-black">
-
-                Nuestro compromiso es construir relaciones duraderas con
-                nuestros clientes, brindando soluciones integrales,
-                capacitación continua y un servicio profesional que impulse
-                el crecimiento del sector odontológico.
-
-              </p>
-
+                <p className="mt-10 text-center text-xl leading-10 text-black">
+                  Nuestro compromiso es construir relaciones duraderas con
+                  nuestros clientes, brindando soluciones integrales,
+                  capacitación continua y un servicio profesional que impulse
+                  el crecimiento del sector odontológico.
+                </p>
+              </div>
             </div>
-
           </FadeIn>
 
           {/* Imagen */}
-
           <FadeIn>
-
-            <div className="relative">
-
+            <div className="relative flex justify-center">
               {/* Glow */}
-
               <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-300/20 blur-[120px]" />
 
               <Image
                 src="/logos/logo balsas.png"
                 alt="Balsas Dental"
-                width={650}
-                height={650}
+                width={450}
+                height={450}
                 className="relative z-10 rounded-[40px] shadow-2xl"
               />
-
             </div>
-
           </FadeIn>
-
         </div>
 
         {/* =====================================

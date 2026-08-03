@@ -389,7 +389,7 @@ export default function Evento() {
                  <div className="text-center">
                     <span className="rounded-full bg-blue-800 px-6 py-2 font-semibold text-white">
 
-                        PARTICIPACION DE BALSAS DIVISIÓN DENTAL
+                        PARTICIPACIÓN
 
                     </span>
                     <h3 className="text-sm uppercase tracking-widest text-blue-700 font-semibold mb-3 text-center mt-4">
@@ -402,7 +402,6 @@ export default function Evento() {
                   No te pierdas de los mejores precios que manejamos en estos eventos.
                 </p>
               </div>
-
 
 
                {/* AMIC TARJETAS*/}

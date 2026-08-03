@@ -25,3 +25,5 @@ ${product.presentations?.join(", ") ?? "No especificadas"}
     .join("\n");
 
 }
+
+
