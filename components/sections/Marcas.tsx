@@ -1,6 +1,7 @@
 "use client";
 
 import FadeIn from "../animations/FadeIn";
+import Link from "next/link";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -148,9 +149,24 @@ export default function Marcas() {
                                         {marca.descripcion}
                                     </p>
                                     </div>
-                            </SwiperSlide>                            
+                            </SwiperSlide>  
                         ))}
                     </Swiper>
+                    <div className="mt-5 text-center">
+                          <Link href="/Productos">
+                          <button className="rounded-xl
+                          bg-white
+                          px-8
+                          py-3
+                          font-semibold
+                          text-blue-700
+                          transition
+                          hover: bg-slate-100
+                          ">
+                            Ver Productos
+                          </button>
+                          </Link>
+                    </div>
                 </div>
             </section>
     );

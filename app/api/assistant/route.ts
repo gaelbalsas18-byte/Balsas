@@ -4,6 +4,7 @@ import { buildCatalogPrompt } from "@/lib/catalog";
 import { searchProducts } from "@/lib/searchProducts";
 import { detectIntent } from "@/lib/intention";
 
+
 export async function POST(req: Request) {
       try {
         const body = await req.json();
