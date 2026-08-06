@@ -1,8 +1,6 @@
 "use client";
-
 import FadeIn from "../animations/FadeIn";
 import Link from "next/link";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import {
@@ -71,7 +69,6 @@ const marcas = [
 
 export default function Marcas() {
     return (
-        
             <section
                 id="Marcas"
                 className="bg-blue-800 py-30">
@@ -143,7 +140,6 @@ export default function Marcas() {
                                     <h3 className="text-2xl font-bold text-white">
                                         {marca.nombre}
                                     </h3>
-
                                     
                                     <p className="mt-3 text-white">
                                         {marca.descripcion}
