@@ -38,9 +38,8 @@ export default function Novedades() {
             CONTENIDO PRINCIPAL
         ================================= */}
 
-        
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-
+            
             {/* =================================
                 IMAGEN 1
             ================================= */}
@@ -82,7 +81,6 @@ export default function Novedades() {
             ================================= */}
 
             <div className="flex flex-col gap-6">
-
               {/* IMAGEN 2 */}
               <FadeIn>
               <div className="rounded-3xl relative h-[200px] overflow-hidden sm:h-[250px]">
@@ -97,7 +95,6 @@ export default function Novedades() {
               </FadeIn>
 
               {/* TEXTO 2 */}
-
               <div
                 className={`${manrope.className} flex flex-1 items-center justify-center px-6 py-7 text-center sm:px-8`}
               >
@@ -109,7 +106,6 @@ export default function Novedades() {
                   al siguiente nivel.
                 </p>
               </div>
-
             </div>
 
             {/* =================================
@@ -130,7 +126,6 @@ export default function Novedades() {
 
           </div>
         
-
         {/* ================================
             BOTÓN
         ================================= */}
@@ -143,7 +138,6 @@ export default function Novedades() {
             Novedades
           </a>
         </div>
-
       </div>
     </section>
   );
