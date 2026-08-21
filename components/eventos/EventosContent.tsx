@@ -88,38 +88,43 @@ const eventos: Evento[] = [
 ];
 
 
-export default function EventosContent() {
+interface EventosContentProps {
+  mesInicial?: number;
+}
+
+export default function EventosContent({
+  mesInicial,
+}: EventosContentProps) {
 
   /*
-   * Mes que actualmente está mostrando el calendario
-   */
+  * Mes que actualmente está mostrando el calendario
+  */
+
   const [mesActual, setMesActual] = useState(
-    new Date().getMonth()
+    mesInicial ?? new Date().getMonth()
   );
 
   const [añoActual, setAñoActual] = useState(
     new Date().getFullYear()
   );
 
-
   /*
-   * Día seleccionado
-   */
+  * Día seleccionado
+  */
   const [fechaSeleccionada, setFechaSeleccionada] =
     useState<string | null>(null);
 
-
   /*
-   * Evento seleccionado para el modal
-   */
+  * Evento seleccionado para el modal
+  */
   const [eventoSeleccionado, setEventoSeleccionado] =
     useState<Evento | null>(null);
 
 
   /*
-   * Filtramos los eventos del mes que
-   * actualmente está mostrando el calendario.
-   */
+  * Filtramos los eventos del mes que
+  * actualmente está mostrando el calendario.
+  */
   const eventosDelMes = eventos.filter((evento) => {
 
     const fechaEvento = new Date(

@@ -1,18 +1,53 @@
 "use client";
 
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+
+import "swiper/css";
+
+const slides = [
+  {
+    image: "/hero/4.jpg",
+    alt: "Balsas Dental",
+  },
+  {
+    image: "/hero/5.jpg",
+    alt: "Balsas Dental",
+  },
+  {
+    image: "/hero/6.jpg",
+    alt: "Balsas Dental",
+  }, 
+];
 
 export default function Hero() {
   return (
-    <section className="relative w-full">
-      <Image
-        src="/"
-        alt="Balsas Dental"
-        width={520}
-        height={400}
-        className="h-243 w-full object-cover"
-        priority
-      />
+    <section className="relative w-full overflow-hidden">
+      <Swiper
+        modules={[Autoplay]}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        loop
+        className="w-full"
+      >
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <div className="relative aspect-[12/6.5] w-full">
+              <Image
+                src={slide.image}
+                alt={slide.alt}
+                fill
+                priority={index === 0}
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   );
 }

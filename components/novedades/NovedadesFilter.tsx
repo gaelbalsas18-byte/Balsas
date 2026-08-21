@@ -78,9 +78,11 @@ export default function NovedadesFilter({
     setEtiqueta,
     setFecha,
 }: NovedadesFilterProps) {
+
   /*
    * Marcas disponibles dependiendo del universo
    */
+  
   const marcasDisponibles =
     universo && universo in filtros
       ? filtros[universo as keyof typeof filtros].marcas
@@ -88,6 +90,7 @@ export default function NovedadesFilter({
   /*
    * Etiquetas disponibles dependiendo de la marca
    */
+
   const etiquetasDisponibles =
     marca && marca in etiquetasPorMarca
       ? etiquetasPorMarca[
@@ -95,10 +98,10 @@ export default function NovedadesFilter({
         ]
       : [];
       return(
-        <div className="mt-12 rounded-2xl bg-[rgb(25,76,229)] p-6 shadow-sm">
+        <div className="mt-12 rounded-2xl bg-[#00539bde] p-6 shadow-sm">
             <div className="mb-6 text-center">
                 <h2 className="text-lg font-bold text-white">
-                    Filtrar Novedades
+                    ¿QUÉ ESTAS BUSCANDO?
                 </h2>
                 <p className="mt-1 text-sm text-white">
                     seleciona las opciones para encontrar contenido relacionado
@@ -111,7 +114,7 @@ export default function NovedadesFilter({
                     className="mb-2 block text-lg font-bold text-white text-center">
                         Universo
                     </label>
-
+                    
                     <select
                     id="universo"
                     value={universo}

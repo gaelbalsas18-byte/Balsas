@@ -305,22 +305,10 @@ export default function Distribucion() {
   const info = estadoActivo ? INFO_ESTADOS[estadoActivo] : null
 
   return (
-
     <section
       id="distribuidores"
-      className="min-h-screen bg-white text-black flex flex-col items-center justify-center px-10 py-15"
+      className="min-h-screen bg-white text-black flex flex-col items-center justify-center px-10 py-7"
     >
-       <div className="text-center">
-          <span className="rounded-full bg-blue-800 px-6 py-2 font-semibold text-white">
-
-              DISTRIBUIDORES EN MÉXICO
-
-          </span>
-      </div>
-       {/* Balsas x Tokuyama - Texto */}
-          <h3 className="text-sm uppercase tracking-widest text-blue-700 font-semibold mb-3 text-center mt-3">
-            Balsas Dental
-          </h3>
       <p className="text-black mb-10 text-center max-w-x2">
         Selecciona un estado para visualizar la disponibilidad de distribuidores en el país.
       </p>
@@ -337,7 +325,7 @@ export default function Distribucion() {
           </option>
         ))}
       </select>
-
+      
       <div className="flex flex-col lg:flex-row gap-16 items-start w-full">
         {/* MAPA */}
         <div className="

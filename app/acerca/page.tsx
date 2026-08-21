@@ -1,6 +1,6 @@
-import EventosContent from "@/components/eventos/EventosContent";
+import EventosContent from "@/components/acerca/AboutHero";
 
-export default function EventosPage() {
+export default function AcercaPage() {
   return (
     <main className="min-h-screen bg-white pt-20">
 
@@ -14,7 +14,7 @@ export default function EventosPage() {
             </span>
 
             <h1 className="mt-3 text-4xl font-bold text-gray-900 md:text-5xl">
-              Eventos
+              Historia
             </h1>
           </div>
 

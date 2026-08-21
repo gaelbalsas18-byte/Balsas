@@ -4,7 +4,6 @@ import { useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { Evento } from "./EventosContent";
 
-
 interface EventosCalendarProps {
   eventos: Evento[];
   fechaSeleccionada: string | null;
@@ -15,7 +14,6 @@ interface EventosCalendarProps {
   setMesActual: (mes: number) => void;
   setAñoActual: (año: number) => void;
 }
-
 
 const meses = [
   "Enero",
@@ -32,7 +30,6 @@ const meses = [
   "Diciembre",
 ];
 
-
 const diasSemana = [
   "Lun",
   "Mar",
@@ -42,7 +39,6 @@ const diasSemana = [
   "Sáb",
   "Dom",
 ];
-
 
 export default function EventosCalendar({
   eventos,
@@ -56,15 +52,10 @@ export default function EventosCalendar({
 
   const mes = mesActual;
   const año = añoActual;
-
-
-  /*
-   * Primer día del mes
-   */
   const primerDia = new Date(año, mes, 1);
 
   /*
-   * Cantidad de días del mes
+   * Cantidad de dias del mes.
    */
   const cantidadDias = new Date(
     año,
@@ -72,16 +63,13 @@ export default function EventosCalendar({
     0
   ).getDate();
 
-
   /*
-   * JS comienza la semana en domingo.
    * Lo convertimos para que comience en lunes.
    */
   const primerDiaSemana =
     primerDia.getDay() === 0
       ? 6
       : primerDia.getDay() - 1;
-
 
   const dias = useMemo(() => {
 
@@ -98,7 +86,6 @@ export default function EventosCalendar({
     return resultado;
 
   }, [primerDiaSemana, cantidadDias]);
-
 
   /*
    * Cambiar mes
@@ -145,7 +132,7 @@ export default function EventosCalendar({
 
 
   /*
-   * Saber si un día tiene eventos
+   * Saber si un dia del mes tiene eventos
    */
   const tieneEvento = (dia: number) => {
 
@@ -182,9 +169,7 @@ export default function EventosCalendar({
           <p className="mt-1 text-sm text-gray-400">
             {año}
           </p>
-
         </div>
-
 
         <button
           type="button"
@@ -194,9 +179,7 @@ export default function EventosCalendar({
         >
           <ChevronRight size={22} />
         </button>
-
       </div>
-
 
       {/* Días de la semana */}
       <div className="mt-10 grid grid-cols-7">
@@ -212,7 +195,6 @@ export default function EventosCalendar({
 
       </div>
 
-
       {/* Días */}
       <div className="grid grid-cols-7 gap-y-3">
 
@@ -227,12 +209,10 @@ export default function EventosCalendar({
             );
           }
 
-
           const fecha = obtenerFecha(dia);
           const hayEvento = tieneEvento(dia);
           const seleccionado =
             fechaSeleccionada === fecha;
-
 
           return (
             <button
@@ -262,7 +242,6 @@ export default function EventosCalendar({
 
               {dia}
 
-
               {/* Indicador de evento */}
               {hayEvento && !seleccionado && (
                 <span className="absolute bottom-1 h-1.5 w-1.5 rounded-full bg-[rgb(255,230,9)] md:bottom-2" />
@@ -271,9 +250,7 @@ export default function EventosCalendar({
             </button>
           );
         })}
-
       </div>
-
 
       {/* Información inferior */}
       <div className="mt-8 flex items-center gap-3 border-t border-gray-100 pt-6">

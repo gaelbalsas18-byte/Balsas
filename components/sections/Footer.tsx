@@ -3,176 +3,254 @@
 import FadeIn from "../animations/FadeIn";
 import Image from "next/image";
 import Link from "next/link";
-
 import {
   FaFacebookF,
   FaInstagram,
   FaWhatsapp,
 } from "react-icons/fa";
+import { Manrope } from "next/font/google";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 
 export default function Footer() {
   return (
-    <footer
-      id="Footer"
-      className="relative overflow-hidden bg-white"
-    >
-      {/* Glow */}
 
-      <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-white" />
-
-      <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-white" />
-
-      {/* =======================================================
-                      CALL TO ACTION
-      ======================================================== */}
-
+    <footer className={`${manrope.className} w-full bg-white text-white`}>
       <FadeIn>
+      <div className="text-center py-13">
+      <Image
+        src="/logos/logo balsas.png"
+        alt="Balsas Dental"
+        width={150}
+        height={50}
+        className="mx-auto h-auto w-[190px]"
+        priority
+      />
+      <p className="mt-7 text-center text-lg text-black">
+        Impulsando la innovación en la odontología mediante tecnología, <br />
+        capacitación y las mejores marcas internacionales.
+      </p>
+    </div>
+    </FadeIn>
 
-        <section className="relative mx-auto max-w-7xl px-6 pt-24">
+    {/* ===================== */}
+    {/* CONTENIDO PRINCIPAL */}
+    {/* ===================== */}
+  <FadeIn>
+   <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
+   <div className="grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-5">
+    
+    {/* ===================== */}
+    {/* QUIÉN ES BALSAS */}
+    {/* ===================== */}
+    <div className="group">
+      <h3 className="text-xl font-bold text-[#2790ec]">
+        ¿Quién es Balsas Dental?
+      </h3>
 
-          <div className="overflow-hidden rounded-[42px] border border-white/10 bg-gradient-to-br from-blue-700 via-blue-800 to-slate-900 p-16 shadow-2xl">
+      {/* Línea decorativa */}
+      <div className="mt-3 h-[3px] w-10 rounded-full bg-[#015096] transition-all duration-300 group-hover:w-20" />
+      <ul className="mt-6 space-y-4">
+        <li>
+          <Link
+            href="/acerca"
+            className="flex items-center gap-2 text-base text-gray-600 transition-all duration-300 hover:translate-x-1 hover:text-[#015096]"
+          >
+            <span className="text-[#015096]">›</span>
+            Historia Balsas
+          </Link>
+        </li>
+      </ul>
+    </div>
 
-            {/* Glow */}
+    {/* ===================== */}
+    {/* DÓNDE COMPRAR */}
+    {/* ===================== */}
 
-            <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full" />
+    <div className="group">
 
-            <div className="relative z-10 text-center">
+      <h3 className="text-xl font-bold text-[#2790ec]">
+        ¿Dónde comprar?
+      </h3>
 
-              <span className="rounded-full bg-white/10 px-6 py-2 font-semibold backdrop-blur-xl">
+      <div className="mt-3 h-[3px] w-10 rounded-full bg-[#015096] transition-all duration-300 group-hover:w-20" />
 
-                BALSAS DENTAL
+      <ul className="mt-6 space-y-4">
+        
+        <li>
+          <a
+            href="https://www.bioden.mx/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-base text-gray-600 transition-all duration-300 hover:translate-x-1 hover:text-[#015096]"
+          >
+            <span className="text-[#015096]">›</span>
+            Tienda Oficial
+          </a>
+        </li>
 
-              </span>
+        <li>
+          <a
+            href="https://wa.me/525512345678"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-base text-gray-600 transition-all duration-300 hover:translate-x-1 hover:text-[#015096]"
+          >
+            <span className="text-[#015096]">›</span>
+            Asesor
+          </a>
+        </li>
 
-              <h2 className="mx-auto mt-8 max-w-4xl text-5xl font-black leading-tight">
+        <Link
+            href="/distribucion"
+            className="flex items-center gap-2 text-base text-gray-600 transition-all duration-300 hover:translate-x-1 hover:text-[#015096]"
+          >
+            <span className="text-[#015096]">›</span>
+            Depósitos dentales
+          </Link>
+      </ul>
+    </div>
 
-                ¿Listo para impulsar tu práctica con las mejores soluciones dentales?
+    {/* ===================== */}
+    {/* EDUCACIÓN */}
+    {/* ===================== */}
 
-              </h2>
+    <div className="group">
+      <h3 className="text-xl font-bold text-[#2790ec]">
+        Educación
+      </h3>
+      <div className="mt-3 h-[3px] w-10 rounded-full bg-[#015096] transition-all duration-300 group-hover:w-20" />
+      <ul className="mt-6 space-y-4">
+        <li>
+          <Link
+            href="/Escuela"
+            className="flex items-center gap-2 text-base text-gray-600 transition-all duration-300 hover:translate-x-1 hover:text-[#015096]"
+          >
+            <span className="text-[#015096]">›</span>
+            Escuelas
+          </Link>
+        </li>
+      </ul>
+    </div>
 
-              <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-white/80">
+    {/* ===================== */}
+    {/* LEGALES */}
+    {/* ===================== */}
 
-                Descubre nuestro catálogo de marcas internacionales
-                y recibe asesoría especializada para encontrar
-                los productos ideales para tu clínica,
-                laboratorio o universidad.
+    <div className="group">
 
-              </p>
+      <h3 className="text-xl font-bold text-[#2790ec]">
+        Legales
+      </h3>
 
-              <button className="mt-12 rounded-2xl bg-white px-10 py-5 text-lg font-bold text-blue-700 transition duration-300 hover:scale-105 hover:bg-blue-50">
+      <div className="mt-3 h-[3px] w-10 rounded-full bg-[#015096] transition-all duration-300 group-hover:w-20" />
+      <ul className="mt-6 space-y-4">
 
-                Contactar a un asesor
+        <li>
+          <Link
+            href="https://drive.google.com/file/d/1Lie7jZxEnGMorJqysOfNjVMooc_w6z4M/view?usp=sharing"
+            className="flex items-center gap-2 text-base text-gray-600 transition-all duration-300 hover:translate-x-1 hover:text-[#015096]"
+          >
+            <span className="text-[#015096]">›</span>
+            Aviso de privacidad
+          </Link>
+        </li>
 
-              </button>
+      </ul>
 
-            </div>
+    </div>
 
-          </div>
+    {/* ===================== */}
+    {/* CONTACTO */}
+    {/* ===================== */}
 
-        </section>
+    <div className="group">
 
-      </FadeIn>
+      <h3 className="text-xl font-bold text-[#2790ec]">
+        Contacto
+      </h3>
 
-      {/* =======================================================
-                            FOOTER
-      ======================================================== */}
+      <div className="mt-3 h-[3px] w-10 rounded-full bg-[#015096] transition-all duration-300 group-hover:w-20" />
 
-      <FadeIn>
+      <p className="mt-6 text-base leading-relaxed text-gray-600">
+        Síguenos en nuestras
+        <br />
+        redes sociales.
+      </p>
 
-        <section className="relative mx-auto max-w-7xl px-6 py-24">
 
-          {/* Logo */}
+      {/* Redes sociales */}
 
-          <div className="flex justify-center">
+      <div className="mt-6 flex items-center gap-3">
 
-            <Image
-              src="/logos/logo balsas.png"
-              alt="Balsas Dental"
-              width={220}
-              height={90}
-              className="h-auto"
-            />
+        {/* Facebook */}
+        <a
+          href="https://www.facebook.com/BalsasDentalmx/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-700 transition-all duration-300 hover:-translate-y-1 hover:border-[#015096] hover:bg-[#015096] hover:text-white"
+        >
+          <FaFacebookF size={18} />
+        </a>
 
-          </div>
 
-          {/* Texto */}
+        {/* Instagram */}
+        <a
+          href="https://www.instagram.com/balsasdentalmx/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-700 transition-all duration-300 hover:-translate-y-1 hover:border-pink-500 hover:bg-pink-500 hover:text-white"
+        >
+          <FaInstagram size={19} />
+        </a>
 
-          <p className="mx-auto mt-8 max-w-2xl text-center text-lg leading-8 text-black">
 
-            Impulsando la innovación en la odontología mediante
-            tecnología, capacitación y las mejores marcas
-            internacionales.
+        {/* WhatsApp */}
+        <a
+          href="https://wa.me/525512345678"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-700 transition-all duration-300 hover:-translate-y-1 hover:border-green-500 hover:bg-green-500 hover:text-white"
+        >
+          <FaWhatsapp size={19} />
+        </a>
 
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+</FadeIn>
+
+
+
+      {/* ===================== */}
+      {/* PARTE INFERIOR */}
+      {/* ===================== */}
+
+      <div className="border-t border-black/50">
+
+        <div className="flex flex-cols items-center justify-between gap-4 px-6 py-6 text-center text-sm text-black md:flex-row md:px-10 md:text-left">
+
+          <p>
+            © {new Date().getFullYear()} Balsas Dental. Todos los derechos reservados.
           </p>
 
-          {/* Redes */}
+          <p>
+            Balsas Dental
+          </p>
 
-          {/* Redes Sociales */}
+        </div>
 
-          <div className="mt-14 flex justify-center">
-
-            <div className="flex items-center gap-5 rounded-full border border-white/10 bg-yellow-400 px-8 py-4 backdrop-blur-xl">
-
-              {/* Facebook */}
-
-              <Link
-                href="https://www.facebook.com/BalsasDentalmx"
-                target="_blank"
-                className="group flex h-14 w-14 items-center justify-center rounded-full transition duration-300 hover:-translate-y-2 hover:bg-[#1877F2]"
-              >
-                <FaFacebookF className="text-2xl text-white transition duration-300 group-hover:scale-125" />
-              </Link>
-
-              {/* Instagram */}
-
-              <Link
-                href="https://www.instagram.com/balsasdentalmx/"
-                target="_blank"
-                className="group flex h-14 w-14 items-center justify-center rounded-full transition duration-300 hover:-translate-y-2 hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-400"
-              >
-                <FaInstagram className="text-2xl text-white transition duration-300 group-hover:scale-125" />
-              </Link>
-
-              {/* WhatsApp */}
-
-            <Link
-              href="https://wa.me/525512345678?text=Hola,%20me%20gustaría%20recibir%20información%20sobre%20los%20productos%20de%20Balsas%20Dental."
-              target="_blank"
-              className="group flex h-14 w-14 items-center justify-center rounded-full transition duration-300 hover:-translate-y-2 hover:bg-[#25D366]"
-            >
-              <FaWhatsapp className="text-2xl text-white transition duration-300 group-hover:scale-125" />
-            </Link>
-
-            </div>
-
-          </div>
-
-          {/* Línea */}
-
-          <div className="my-14 h-px bg-white/10" />
-
-          {/* Footer inferior */}
-
-          <div className="flex flex-col items-center justify-between gap-6 text-center md:flex-row">
-
-            <p className="text-black">
-
-              © {new Date().getFullYear()} Balsas Dental. Todos los derechos reservados.
-
-            </p>
-
-            <Link
-              href="/aviso-de-privacidad"
-              className="text-black transition hover:text-white"
-            >
-              Aviso de Privacidad
-            </Link>
-
-          </div>
-
-        </section>
-
-      </FadeIn>
+      </div>
 
     </footer>
   );

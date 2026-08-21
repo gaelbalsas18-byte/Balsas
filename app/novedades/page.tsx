@@ -2,9 +2,11 @@ import NovedadesContent from "@/components/novedades/NovedadesContent";
 
 export default function NovedadesPage() {
   return (
-    <main className="min-h-screen bg-gray-50 pt-20">
+    <main className="min-h-screen bg-gray-50 ">
 
-      <section className="px-6 py-16 lg:px-10">
+      <section 
+      id="novedades"
+      className="px-6 py-16 lg:px-10">
         <div className="mx-auto max-w-7xl">
 
           {/* Encabezado */}
@@ -24,7 +26,6 @@ export default function NovedadesPage() {
 
           {/* Contenido */}
           <NovedadesContent />
-
         </div>
       </section>
 

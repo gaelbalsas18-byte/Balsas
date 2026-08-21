@@ -4,6 +4,13 @@ import "./globals.css";
 import ChatAssistant from "@/components/Chatbot/ChatAssistant";
 import { Children } from "react";
 import Navbar from "@/components/Navbar/Navbar";
+import { Manrope } from "next/font/google";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-manrope",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} {manrope.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Navbar/>
