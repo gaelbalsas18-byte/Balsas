@@ -2,13 +2,12 @@
 
 import { useState } from "react";
 
-import HeroProductos from "@/components/Productos/HeroProductos";
-import Stats from "@/components/Productos/Stats";
 import IntroBrands from "@/components/Productos/IntroBrands";
 import BrandGrid from "@/components/Productos/BrandGrid";
 import Assistant from "@/components/AsistenteIA/Assistant";
 
 import { Category } from "@/components/Productos/CategoryFilter";
+import Footer from "@/components/sections/Footer";
 
 export default function Productos() {
 
@@ -17,9 +16,6 @@ export default function Productos() {
 
   return (
     <>
-      <HeroProductos />
-
-      <Stats />
 
       <IntroBrands
         selectedCategory={selectedCategory}
@@ -31,6 +27,8 @@ export default function Productos() {
       />
 
       <Assistant />
+
+      <Footer/>
     </>
   );
 }

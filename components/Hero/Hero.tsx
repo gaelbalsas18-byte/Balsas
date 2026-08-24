@@ -18,7 +18,7 @@ const slides = [
   {
     image: "/hero/6.jpg",
     alt: "Balsas Dental",
-  }, 
+  },
 ];
 
 export default function Hero() {
@@ -35,14 +35,14 @@ export default function Hero() {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="relative aspect-[11/6.5] w-full">
+            <div className="relative aspect-video w-full">
               <Image
                 src={slide.image}
                 alt={slide.alt}
                 fill
                 priority={index === 0}
                 sizes="100vw"
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           </SwiperSlide>

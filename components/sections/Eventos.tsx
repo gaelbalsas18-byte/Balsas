@@ -15,32 +15,31 @@ const eventos = [
   {
     mes: "NOVIEMBRE",
     mesNumero: 10,
-    imagen: "/Eventos/Fest/Dia1.jpg",
+    imagen: "/",
     rotation: -6,
   },
   {
     mes: "DICIEMBRE",
     mesNumero: 11,
-    imagen: "/Eventos/Fest/fest.jpg",
+    imagen: "/",
     rotation: -2,
   },
   {
     mes: "ENERO",
     mesNumero: 0,
-    imagen: "/Eventos/Fest/Dia1.jpg",
+    imagen: "/",
     rotation: 3,
   },
   {
     mes: "FEBRERO",
     mesNumero: 1,
-    imagen: "/Eventos/Fest/fest3.jpg",
+    imagen: "/",
     rotation: 6,
   },
 ];
 
 export default function Evento() {
   const cardsRef = useRef<HTMLDivElement>(null);
-
   const isInView = useInView(cardsRef, {
     amount: 0.45,
     once: true,
@@ -51,7 +50,6 @@ export default function Evento() {
   );
 
   const [isMobile, setIsMobile] = useState(false);
-
   /*
    * Detectar tamaño de pantalla
    */
@@ -72,7 +70,6 @@ export default function Evento() {
   const seleccionarMes = (mes: number) => {
     setMesSeleccionado(mes);
   };
-
   /*
    * Posiciones para computadora
    */
@@ -82,7 +79,6 @@ export default function Evento() {
     140,
     420,
   ];
-
   /*
    * Posiciones para celular
    */
@@ -108,7 +104,6 @@ export default function Evento() {
         </span>
       </div>
 
-
       {/* ===================== */}
       {/* TEXTO */}
       {/* ===================== */}
@@ -126,7 +121,6 @@ export default function Evento() {
           No te pierdas de las experiencias que Balsas Dental te ofrece.
         </p>
       </div>
-
 
       {/* ===================== */}
       {/* TARJETAS */}
@@ -146,9 +140,7 @@ export default function Evento() {
           sm:h-[420px]
         "
       >
-
         {eventos.map((evento, index) => {
-
           const posicion = isMobile
             ? posicionesMobile[index]
             : posicionesDesktop[index];
@@ -237,13 +229,11 @@ export default function Evento() {
                 priority={index < 2}
               />
 
-
               {/* ===================== */}
               {/* DEGRADADO */}
               {/* ===================== */}
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-
 
               {/* ===================== */}
               {/* MES */}
@@ -260,7 +250,6 @@ export default function Evento() {
         })}
 
       </div>
-
 
       {/* ===================== */}
       {/* CALENDARIO / EVENTOS */}

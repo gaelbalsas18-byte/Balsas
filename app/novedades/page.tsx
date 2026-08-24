@@ -1,4 +1,5 @@
 import NovedadesContent from "@/components/novedades/NovedadesContent";
+import Footer from "@/components/sections/Footer";
 
 export default function NovedadesPage() {
   return (
@@ -28,7 +29,7 @@ export default function NovedadesPage() {
           <NovedadesContent />
         </div>
       </section>
-
+      <Footer/>
     </main>
   );
 }

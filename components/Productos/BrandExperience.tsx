@@ -8,7 +8,6 @@ import { products } from "../data/products";
 
 import ProductGrid from "./ProductGrid";
 import ProductFilters from "./ProductFilters";
-import SearchBar from "./SearchBar";
 
 // ESTE IMPORT LO USAREMOS EN EL SIGUIENTE PASO
 import ProductExperience from "./ProductExperience";
@@ -262,11 +261,6 @@ export default function BrandExperience({
               </div>
 
             </div>
-
-            <SearchBar
-              value={search}
-              onChange={setSearch}
-            />
 
             <ProductFilters
               categories={categories}
