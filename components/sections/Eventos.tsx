@@ -1,8 +1,7 @@
 "use client";
 
+import FadeIn from "../animations/FadeIn";
 import Image from "next/image";
-import { motion, useInView } from "motion/react";
-import { useEffect, useRef, useState } from "react";
 import EventosContent from "@/components/eventos/EventosContent";
 import { Manrope } from "next/font/google";
 
@@ -11,257 +10,197 @@ const manrope = Manrope({
   weight: ["400", "500", "700"],
 });
 
-const eventos = [
-  {
-    mes: "NOVIEMBRE",
-    mesNumero: 10,
-    imagen: "/",
-    rotation: -6,
-  },
-  {
-    mes: "DICIEMBRE",
-    mesNumero: 11,
-    imagen: "/",
-    rotation: -2,
-  },
-  {
-    mes: "ENERO",
-    mesNumero: 0,
-    imagen: "/",
-    rotation: 3,
-  },
-  {
-    mes: "FEBRERO",
-    mesNumero: 1,
-    imagen: "/",
-    rotation: 6,
-  },
-];
-
 export default function Evento() {
-  const cardsRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(cardsRef, {
-    amount: 0.45,
-    once: true,
-  });
-
-  const [mesSeleccionado, setMesSeleccionado] = useState<number | null>(
-    null
-  );
-
-  const [isMobile, setIsMobile] = useState(false);
-  /*
-   * Detectar tamaño de pantalla
-   */
-  useEffect(() => {
-    const comprobarPantalla = () => {
-      setIsMobile(window.innerWidth < 640);
-    };
-
-    comprobarPantalla();
-
-    window.addEventListener("resize", comprobarPantalla);
-
-    return () => {
-      window.removeEventListener("resize", comprobarPantalla);
-    };
-  }, []);
-
-  const seleccionarMes = (mes: number) => {
-    setMesSeleccionado(mes);
-  };
-  /*
-   * Posiciones para computadora
-   */
-  const posicionesDesktop = [
-    -420,
-    -140,
-    140,
-    420,
-  ];
-  /*
-   * Posiciones para celular
-   */
-  const posicionesMobile = [
-    -120,
-    -45,
-    35,
-    120,
-  ];
-
   return (
-    <section 
-    id="eventos"
-    className="w-full overflow-hidden bg-white py-10">
+    <section
+      id="eventos"
+      className="w-full overflow-hidden bg-white py-10 sm:py-14"
+    >
 
       {/* ===================== */}
       {/* ENCABEZADO */}
       {/* ===================== */}
 
       <div className={`${manrope.className} mt-3 text-center`}>
-        <span className="rounded-full bg-[#2790ec] px-6 py-2 font-semibold text-white">
+        <span className="inline-block rounded-full bg-[#0057b8] px-6 py-2 text-sm font-semibold text-white sm:text-base">
           EVENTOS
         </span>
       </div>
 
+
       {/* ===================== */}
-      {/* TEXTO */}
+      {/* TEXTO INTRODUCTORIO */}
       {/* ===================== */}
 
-      <div
-        className={`${manrope.className} mx-auto mt-7 max-w-3xl px-5 text-center`}
-      >
-        <h3 className="text-base leading-relaxed text-black sm:text-lg">
-          Los eventos que quedan esta segunda parte del año
-        </h3>
+      <div className={`${manrope.className} mt-14 px-5 text-center sm:mt-10`}>
 
-        <p className="mt-2 text-base leading-relaxed text-black sm:text-lg">
-          Checa los eventos de cada mes.
-          <br />
-          No te pierdas de las experiencias que Balsas Dental te ofrece.
-        </p>
+        <span
+          className="
+            inline-block
+            text-2xl
+            font-bold
+            tracking-wide
+            text-[#2790ec]
+            sm:text-3xl
+            md:text-4xl
+          "
+        >
+          ¡NO TE PIERDAS DE NUEVAS EXPERIENCIAS!
+        </span>
+
       </div>
 
-      {/* ===================== */}
-      {/* TARJETAS */}
-      {/* ===================== */}
 
       <div
-        ref={cardsRef}
-        className="
-          relative
+        className={`
+          ${manrope.className}
           mx-auto
-          mt-14
-          h-[300px]
+          mt-8
+          grid
           w-full
-          max-w-7xl
-
-          sm:mt-20
-          sm:h-[420px]
-        "
+          max-w-5xl
+          grid-cols-1
+          gap-8
+          px-6
+          text-center
+          md:grid-cols-2
+          md:gap-14
+          md:px-8
+        `}
       >
-        {eventos.map((evento, index) => {
-          const posicion = isMobile
-            ? posicionesMobile[index]
-            : posicionesDesktop[index];
 
-          return (
-            <motion.button
-              key={evento.mes}
-              type="button"
-              onClick={() => seleccionarMes(evento.mesNumero)}
-              aria-label={`Ver eventos de ${evento.mes}`}
+        {/* ===================== */}
+        {/* TEXTO IZQUIERDO */}
+        {/* ===================== */}
 
-              className="
-                absolute
-                left-1/2
-                top-1/2
-                -translate-x-1/2
-                -translate-y-1/2
-                overflow-hidden
-                rounded-3xl
-                border
-                border-gray-200
-                bg-gray-100
-                shadow-xl
-                outline-none
-                focus:ring-4
-                focus:ring-[#2790ec]/40
+        <div className="flex items-center">
 
-                h-[250px]
-                w-[145px]
+          <p className="text-base leading-7 text-black sm:text-base">
 
-                sm:h-[360px]
-                sm:w-[260px]
-              "
+            En{" "}
+            <strong className="text-[#0057b8]">
+              Balsas Dental
+            </strong>{" "}
+            impulsamos la excelencia en la odontología moderna.
 
-              initial={{
-                x: 0,
-                y: 0,
-                rotate: 0,
-                scale: 0.9,
-              }}
+            Participamos activamente en los congresos más importantes del
+            sector, como la AMIC Dental, e impartimos cursos especializados
+            de alto nivel.
 
-              animate={
-                isInView
-                  ? {
-                      x: posicion,
-                      y: index % 2 === 0 ? 0 : -5,
-                      rotate: evento.rotation,
-                      scale: 1,
-                    }
-                  : {
-                      x: 0,
-                      y: 0,
-                      rotate: 0,
-                      scale: 0.9,
-                    }
-              }
+          </p>
 
-              transition={{
-                duration: 1.2,
-                delay: index * 0.12,
-                ease: [0.22, 1, 0.36, 1],
-              }}
+        </div>
 
-              whileHover={{
-                scale: 1.04,
-              }}
 
-              whileTap={{
-                scale: 0.97,
-              }}
+        {/* ===================== */}
+        {/* TEXTO DERECHO */}
+        {/* ===================== */}
 
-              style={{
-                zIndex: index + 1,
-              }}
-            >
+        <div className="flex items-center">
 
-              {/* ===================== */}
-              {/* IMAGEN */}
-              {/* ===================== */}
+          <p className="text-base leading-7 text-black sm:text-base">
 
-              <Image
-                src={evento.imagen}
-                alt={`Evento ${evento.mes}`}
-                fill
-                className="object-cover"
-                priority={index < 2}
-              />
+            El sector odontológico está en constante evolución y en Balsas
+            te acercamos a los mejores expertos.
 
-              {/* ===================== */}
-              {/* DEGRADADO */}
-              {/* ===================== */}
+            Descubre nuestras próximas capacitaciones internacionales en
+            carillas y estética dental.
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+          </p>
 
-              {/* ===================== */}
-              {/* MES */}
-              {/* ===================== */}
-
-              <div className="absolute inset-x-0 bottom-0 p-3 sm:p-6">
-                <p className="text-center text-sm font-bold tracking-wider text-white sm:text-xl">
-                  {evento.mes}
-                </p>
-              </div>
-
-            </motion.button>
-          );
-        })}
+        </div>
 
       </div>
 
+
       {/* ===================== */}
-      {/* CALENDARIO / EVENTOS */}
+      {/* IMAGEN PRINCIPAL */}
       {/* ===================== */}
 
-      {mesSeleccionado !== null && (
-        <div className="mt-16 sm:mt-20">
-          <EventosContent
-            mesInicial={mesSeleccionado}
+      <FadeIn>
+
+        <div
+          className="
+            relative
+            mx-auto
+            mt-10
+            h-[200px]
+            w-[90%]
+            max-w-6xl
+            overflow-hidden
+            rounded-3xl
+
+            sm:h-[300px]
+            sm:w-[80%]
+
+            md:h-[380px]
+            md:w-[70%]
+
+            lg:h-[430px]
+            lg:w-[60%]
+          "
+        >
+
+          <Image
+            src="/Eventos/Fest/Dia1.jpg"
+            alt="Eventos Balsas Dental"
+            fill
+            sizes="
+              (max-width: 640px) 90vw,
+              (max-width: 1024px) 80vw,
+              60vw
+            "
+            className="object-cover"
+            priority
           />
+
+
+          {/* Texto sobre imagen */}
+
+          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+
+            <p
+              className={`
+                ${manrope.className}
+                text-center
+                text-lg
+                font-bold
+                text-white
+                sm:text-2xl
+                md:text-3xl
+              `}
+            >
+              ¡Vive Nuevas Experiencias!
+            </p>
+
+          </div>
+
         </div>
-      )}
+
+      </FadeIn>
+
+
+      {/* ===================== */}
+{/* CALENDARIO */}
+{/* ===================== */}
+
+<div
+  className={`
+    ${manrope.className}
+    mx-auto
+    mt-20
+    w-full
+    max-w-6xl
+    px-5
+    sm:mt-24
+    sm:px-8
+  `}
+>
+    <div className="mx-auto w-full">
+      <EventosContent />
+    </div>
+  
+</div>
 
     </section>
   );

@@ -8,6 +8,7 @@ import Marcas from "@/components/sections/Marcas";
 import Evento from "@/components/sections/Eventos";
 import Footer from "@/components/sections/Footer";
 import Novedades from "@/components/sections/Novedades";
+import Extra from "@/components/sections/Extra";
 
 export default function Home() {
    const [acceptedNotice, setAcceptedNotice] = useState(false);
@@ -24,6 +25,7 @@ export default function Home() {
           <Novedades/>
              <Evento/>
                 <Marcas/>
+                  <Extra/>
                     <Footer/>
     </>
   );

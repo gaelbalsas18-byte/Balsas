@@ -1,16 +1,25 @@
 "use client";
 
 import { motion } from "motion/react";
-import CategoryFilter, { Category } from "./CategoryFilter";
+import CategoryFilter from "./CategoryFilter";
 
 interface Props {
-  selectedCategory: Category;
-  onCategoryChange: (category: Category) => void;
+  universo: string;
+  especialidad: string;
+  necesidad: string;
+
+  setUniverso: (value: string) => void;
+  setEspecialidad: (value: string) => void;
+  setNecesidad: (value: string) => void;
 }
 
 export default function IntroBrands({
-  selectedCategory,
-  onCategoryChange,
+  universo,
+  especialidad,
+  necesidad,
+  setUniverso,
+  setEspecialidad,
+  setNecesidad,
 }: Props) {
   return (
     <section className="relative overflow-hidden bg-white py-28">
@@ -35,11 +44,12 @@ export default function IntroBrands({
         <motion.h2
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: .2 }}
+          transition={{ delay: 0.2 }}
           viewport={{ once: true }}
           className="mt-8 text-5xl font-black text-slate-900"
         >
           Trabajamos únicamente con
+
           <span className="block bg-gray-400 bg-clip-text text-transparent">
             fabricantes líderes
           </span>
@@ -48,7 +58,7 @@ export default function IntroBrands({
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: .4 }}
+          transition={{ delay: 0.4 }}
           viewport={{ once: true }}
           className="mt-8 max-w-3xl text-xl leading-9 text-black"
         >
@@ -69,8 +79,6 @@ export default function IntroBrands({
           }}
           className="mt-20"
         >
-
-          
           <svg
             className="h-10 w-10 text-blue-700"
             fill="none"
@@ -86,11 +94,17 @@ export default function IntroBrands({
           </svg>
         </motion.div>
 
-        <div className="mt-10">
+        {/* Filtros */}
+
+        <div className="mt-10 w-full">
 
           <CategoryFilter
-            selected={selectedCategory}
-            onChange={onCategoryChange}
+            universo={universo}
+            especialidad={especialidad}
+            necesidad={necesidad}
+            setUniverso={setUniverso}
+            setEspecialidad={setEspecialidad}
+            setNecesidad={setNecesidad}
           />
 
         </div>

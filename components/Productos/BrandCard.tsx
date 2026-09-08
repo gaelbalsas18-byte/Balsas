@@ -11,7 +11,6 @@ interface Props {
     logo: string;
     color: string;
     glow: string;
-    products?: number;
   };
 
   onClick: () => void;
@@ -97,19 +96,7 @@ export default function BrandCard({
 
       {/* Contenido */}
 
-      <div className="relative z-10 flex h-[420px] flex-col justify-between p-10">
-
-        {/* Badge */}
-
-        <div>
-
-          <span className="rounded-full bg-white/20 px-4 py-2 text-sm font-semibold text-white backdrop-blur-md">
-
-            {brand.products}+ Productos
-
-          </span>
-
-        </div>
+      <div className="relative z-10 flex h-[420px] flex-col justify-between p-15">
 
         {/* Logo */}
 

@@ -18,21 +18,31 @@ export default function Novedades() {
             ENCABEZADO
         ================================= */}
 
-        <div className="mb-8 flex items-center justify-between sm:mb-10">
-         <div className={`${manrope.className}`}>
-            <span className="rounded-full bg-[#2790ec] px-6 py-2 font-semibold text-white">
+        <div className="text-center sm:mb-5">
+         <div className={`${manrope.className} text-center`}>
+            <span className="rounded-full bg-[#0057b8] px-6 py-2 font-semibold text-white">
               NOVEDADES 
             </span>
           </div>
-
-          <Image
-            src="/logos/logo balsas.png"
-            alt="Balsas Dental"
-            width={120}
-            height={80}
-            className="w-20 object-contain sm:w-28"
-          />
         </div>
+
+        <div className={`${manrope.className} mt-14 px-5 text-center sm:mt-1`}>
+        <span
+          className="
+            inline-block
+            text-2xl
+            font-bold
+            tracking-wide
+            text-[#2790ec]
+            sm:text-3xl
+            md:text-4xl
+            py-10
+          "
+        >
+          ¡MANTENTE AL TANTO!
+        </span>
+
+      </div>
 
         {/* ================================
             CONTENIDO PRINCIPAL
@@ -63,13 +73,12 @@ export default function Novedades() {
             <div
               className={`${manrope.className} flex items-center justify-center px-6 py-8 text-center sm:px-10`}
             >
-              <p className="text-base leading-relaxed text-black sm:text-xl">
+              <p className="text-base leading-relaxed text-black sm:text-base">
                 Checa las nuevas novedades que tiene{" "}
-                <strong className="text-[#2790ec]"><br/>
+                <strong className="text-blue-700"><br/>
                   Balsas Dental
                 </strong>{" "}
                 para ti.
-                <br />
                 Mantente al día con las últimas innovaciones,
                 productos, tecnologías y soluciones que tenemos
                 para el mundo odontológico.
@@ -98,7 +107,7 @@ export default function Novedades() {
               <div
                 className={`${manrope.className} flex flex-1 items-center justify-center px-6 py-7 text-center sm:px-8`}
               >
-                <p className="text-base leading-relaxed text-black sm:text-xl">
+                <p className="text-base leading-relaxed text-black sm:text-base">
                   Descubre las novedades de las mejores marcas
                   que trabajan con nosotros y conoce todo lo nuevo.
                   

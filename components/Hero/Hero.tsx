@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-
 import "swiper/css";
 
 const slides = [
@@ -41,7 +40,7 @@ export default function Hero() {
                 alt={slide.alt}
                 fill
                 priority={index === 0}
-                sizes="100vw"
+                sizes="110vw"
                 className="object-contain"
               />
             </div>

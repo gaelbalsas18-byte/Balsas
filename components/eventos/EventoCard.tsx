@@ -18,11 +18,11 @@ export default function EventoCard({
   return (
     <article
       onClick={onClick}
-      className="group cursor-pointer overflow-hidden rounded-3xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+      className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-3xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
     >
 
       {/* Imagen */}
-      <div className="relative h-56 w-full overflow-hidden">
+      <div className="relative h-52 w-full shrink-0 overflow-hidden">
 
         <Image
           src={evento.imagen}
@@ -32,9 +32,9 @@ export default function EventoCard({
         />
 
         {/* Fecha */}
-        <div className="absolute left-4 top-4 rounded-xl bg-white px-4 py-2 shadow-md">
+        <div className="absolute left-4 top-4 rounded-xl bg-[#2858d3] px-4 py-2 shadow-md">
 
-          <span className="text-xs font-bold uppercase tracking-wider text-[#00529B]">
+          <span className="text-xs font-bold uppercase tracking-wider text-white">
             {evento.fechaTexto}
           </span>
 
@@ -44,11 +44,11 @@ export default function EventoCard({
 
 
       {/* Contenido */}
-      <div className="p-6">
+      <div className="flex flex-1 flex-col p-6">
 
         {/* Marca */}
         {evento.marca && (
-          <span className="text-xs font-bold uppercase tracking-widest text-[#00529B]">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#1f40e4]">
             {evento.marca}
           </span>
         )}
@@ -93,7 +93,7 @@ export default function EventoCard({
             e.stopPropagation();
             onClick();
           }}
-          className="mt-6 text-sm font-semibold text-[#00529B] transition hover:text-[#003C73]"
+          className="mt-6 text-sm font-semibold text-[#1f40e4] transition hover:text-[#003C73]"
         >
           Ver evento →
         </button>

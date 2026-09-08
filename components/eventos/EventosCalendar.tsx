@@ -57,6 +57,7 @@ export default function EventosCalendar({
   /*
    * Cantidad de dias del mes.
    */
+  
   const cantidadDias = new Date(
     año,
     mes + 1,
@@ -103,7 +104,9 @@ export default function EventosCalendar({
     }else{
         nuevoMes = mes - 1
     }
+
    }else{
+
     if (mes === 11) {
         nuevoMes = 0;
         nuevoAño = año + 1;
@@ -112,11 +115,13 @@ export default function EventosCalendar({
     }
    }
 
-   setMesActual(nuevoMes);
-   setAñoActual(añoActual);
+    setMesActual(nuevoMes);
+    setAñoActual(nuevoAño);
+    setFechaSeleccionada(null);
 
    {/*Esto quita cualquier mes seleccionado*/}
    setFechaSeleccionada(null);
+
   };
 
   /*
@@ -130,7 +135,6 @@ export default function EventosCalendar({
     return `${año}-${mesFormateado}-${diaFormateado}`;
   };
 
-
   /*
    * Saber si un dia del mes tiene eventos
    */
@@ -143,126 +147,285 @@ export default function EventosCalendar({
     );
   };
 
-
   return (
-    <div className="rounded-3xl border border-gray-100 bg-[rgba(27,65,252,0.82)] p-3 shadow-sm md:p-8 lg:p-10 mt-6">
+  <div
+  className="
+    mt-6
+    w-full
+    rounded-3xl
+    border
+    border-blue-400
+    bg-white
+    p-4
+    shadow-sm
+    md:p-6
+  "
+>
 
-      {/* Encabezado calendario */}
-      <div className="flex items-center justify-between">
+    {/* ========================= */}
+    {/* ENCABEZADO */}
+    {/* ========================= */}
 
-        <button
-          type="button"
-          onClick={() => cambiarMes(-1)}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 text-gray-600 transition hover:border-[#00529B] hover:bg-[#00529B] hover:text-white"
-          aria-label="Mes anterior"
+    <div className="flex items-center justify-between bg-blue-700 rounded-3xl ">
+
+      <button
+        type="button"
+        onClick={() => cambiarMes(-1)}
+        className="
+          flex
+          h-7
+          w-7
+          shrink-0
+          items-center
+          justify-center
+          rounded-full
+          border
+          border-white
+          text-white
+          transition-all
+          duration-300
+          hover:border-[#2790ec]
+          hover:bg-[#2790ec]
+          hover:text-white
+        "
+        aria-label="Mes anterior"
+      >
+        <ChevronLeft size={18} />
+      </button>
+
+
+      <div className="text-center">
+
+        <h2
+          className="
+            text-xl
+            font-bold
+            text-white
+            sm:text-2xl
+          "
         >
-          <ChevronLeft size={22} />
-        </button>
+          {meses[mes]}
+        </h2>
 
-
-        <div className="text-center">
-
-          <h2 className="text-2xl font-bold text-[rgb(255,255,255)] md:text-3xl">
-            {meses[mes]}
-          </h2>
-
-          <p className="mt-1 text-sm text-gray-400">
-            {año}
-          </p>
-        </div>
-
-        <button
-          type="button"
-          onClick={() => cambiarMes(1)}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-[rgb(255,255,255)] text-[rgb(255,255,255)] transition hover:border-[#00529B] hover:bg-[rgb(255,255,255)] hover:text-[rgb(18,52,221)]"
-          aria-label="Mes siguiente"
-        >
-          <ChevronRight size={22} />
-        </button>
-      </div>
-
-      {/* Días de la semana */}
-      <div className="mt-10 grid grid-cols-7">
-
-        {diasSemana.map((dia) => (
-          <div
-            key={dia}
-            className="pb-4 text-center text-xs font-semibold uppercase tracking-wider text-[rgb(255,255,255)] md:text-sm"
-          >
-            {dia}
-          </div>
-        ))}
+        <p className="mt-0.5 text-xs text-white">
+          {año}
+        </p>
 
       </div>
 
-      {/* Días */}
-      <div className="grid grid-cols-7 gap-y-3">
 
-        {dias.map((dia, index) => {
-
-          if (!dia) {
-            return (
-              <div
-                key={`empty-${index}`}
-                className="h-14 md:h-20"
-              />
-            );
-          }
-
-          const fecha = obtenerFecha(dia);
-          const hayEvento = tieneEvento(dia);
-          const seleccionado =
-            fechaSeleccionada === fecha;
-
-          return (
-            <button
-              key={fecha}
-              type="button"
-              disabled={!hayEvento}
-              onClick={() => {
-
-                if (hayEvento) {
-                  setFechaSeleccionada(
-                    seleccionado ? null : fecha
-                  );
-                }
-
-              }}
-              className={`relative mx-auto flex h-12 w-12 items-center justify-center rounded-full text-sm transition md:h-16 md:w-16 md:text-base
-
-                ${
-                  seleccionado
-                    ? "bg-[rgb(18,52,221)] font-bold text-white shadow-lg"
-                    : hayEvento
-                      ? "font-semibold text-[rgb(255,230,9)] hover:bg-blue-50 hover:text-[#00529B]"
-                      : "text-[rgb(255,255,255)]"
-                }
-              `}
-            >
-
-              {dia}
-
-              {/* Indicador de evento */}
-              {hayEvento && !seleccionado && (
-                <span className="absolute bottom-1 h-1.5 w-1.5 rounded-full bg-[rgb(255,230,9)] md:bottom-2" />
-              )}
-
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Información inferior */}
-      <div className="mt-8 flex items-center gap-3 border-t border-gray-100 pt-6">
-
-        <span className="h-2.5 w-2.5 rounded-full bg-[rgb(255,230,9)]" />
-
-        <span className="text-sm text-[rgb(255,255,255)]">
-          Días con eventos
-        </span>
-
-      </div>
+      <button
+        type="button"
+        onClick={() => cambiarMes(1)}
+        className="
+          flex
+          h-7
+          w-7
+          shrink-1
+          items-center
+          justify-center
+          rounded-full
+          border
+          border-white
+          text-white
+          transition-all
+          duration-300
+          hover:border-[#2790ec]
+          hover:bg-[#2790ec]
+          hover:text-white
+        "
+        aria-label="Mes siguiente"
+      >
+        <ChevronRight size={18} />
+      </button>
 
     </div>
-  );
+
+
+    {/* ========================= */}
+    {/* DÍAS DE LA SEMANA */}
+    {/* ========================= */}
+
+    <div className="mt-7 grid grid-cols-7">
+
+      {diasSemana.map((dia) => (
+
+        <div
+          key={dia}
+          className="
+            pb-3
+            text-center
+            text-[10px]
+            font-semibold
+            uppercase
+            tracking-wide
+            text-gray-500
+            sm:text-xs
+          "
+        >
+          {dia}
+        </div>
+
+      ))}
+
+    </div>
+
+
+    {/* ========================= */}
+    {/* DÍAS */}
+    {/* ========================= */}
+
+    <div className="grid grid-cols-7 gap-y-2">
+
+      {dias.map((dia, index) => {
+
+        if (!dia) {
+
+          return (
+            <div
+              key={`empty-${index}`}
+              className="h-10 sm:h-11"
+            />
+          );
+
+        }
+
+
+        const fecha = obtenerFecha(dia);
+
+        const hayEvento = tieneEvento(dia);
+
+        const seleccionado =
+          fechaSeleccionada === fecha;
+
+
+        return (
+
+          <button
+            key={fecha}
+            type="button"
+            disabled={!hayEvento}
+
+            onClick={() => {
+
+              if (hayEvento) {
+
+                setFechaSeleccionada(
+                  seleccionado ? null : fecha
+                );
+
+              }
+
+            }}
+
+            className={`
+              relative
+              mx-auto
+              flex
+              h-9
+              w-9
+              items-center
+              justify-center
+              rounded-full
+              text-xs
+              transition-all
+              duration-200
+
+              sm:h-10
+              sm:w-10
+              sm:text-sm
+
+              ${
+                seleccionado
+                  ? `
+                    bg-[#2790ec]
+                    font-bold
+                    text-white
+                    shadow-md
+                  `
+                  : hayEvento
+                    ? `
+                      font-bold
+                      text-[#1449e8]
+                      hover:bg-[#1449e8]/10
+                    `
+                    : `
+                      text-gray-700
+                    `
+              }
+            `}
+          >
+            
+            {dia}
+
+
+            {/* Indicador */}
+
+            {hayEvento && !seleccionado && (
+
+              <span
+                className="
+                  absolute
+                  bottom-[-1]
+                  h-2
+                  w-2
+                  rounded-full
+                  bg-[#0cbe5f]
+                  bg-[#0cbe5f]
+                  sm:bottom-[-1]
+                "
+              />
+
+            )}
+
+          </button>
+
+        );
+
+      })}
+
+    </div>
+
+
+    {/* ========================= */}
+    {/* LEYENDA */}
+    {/* ========================= */}
+
+    <div
+      className="
+        mt-6
+        flex
+        items-center
+        gap-2
+        border-t
+        border-gray-100
+        pt-5
+      "
+    >
+
+      <span
+        className="
+          h-2
+          w-2
+          rounded-full
+          bg-[#0cbe5f]
+        "
+      />
+
+      <span
+        className="
+          text-xs
+          font-bold
+          text-black
+        "
+      >
+        DÍAS CON EVENTOS
+      </span>
+
+    </div>
+
+  </div>
+);
 }
+
+

@@ -17,7 +17,7 @@ const manrope = Manrope({
 
 export default function Footer() {
   return (
-    <footer className={`${manrope.className} w-full bg-[#1c76c5] text-white`}>
+    <footer id="footer" className={`${manrope.className} w-full bg-[#1c76c5] text-white`}>
 
       {/* ================================================== */}
       {/* PRESENTACIÓN */}
