@@ -1,19 +1,25 @@
 export const brands = [
+
   {
-    id: "tokuyama",
-    universo: ["Clínica"],
-    especialidades: ["Restaurativa", "Prótesis"],
-    necesidades: [
-      "Resinas dentales",
-      "Adhesivos dentales",
-      "Cementos dentales",
-      "Resinas provisionales",
-    ],
-    name: "Tokuyama",
-    slogan: "Innovating Tomorrow's Dentistry Today",
-    logo: "/logos/Tokuyama.png",
-    color: "bg-blue-800",
-    glow: "shadow-blue-200/40",
+  id: "tokuyama",
+  universo: ["Clínica"],
+  especialidades: ["Restaurativa", "Prótesis"],
+  necesidades: [
+    "Resinas dentales",
+    "Adhesivos dentales",
+    "Cementos dentales",
+    "Resinas provisionales",
+  ],
+  name: "Tokuyama",
+  slogan: "Innovating Tomorrow's Dentistry Today",
+  description:
+    "Reconocida por desarrollar materiales de alta calidad que brindan precisión, confianza y excelentes resultados clínicos.",
+  logo: "/logos/Tokuyama.png",
+  image: "/",
+  color: "bg-blue-500",
+  glow: "shadow-blue-200/40",
+  link: "https://www.tokuyama.mx/",
+  pdf: "",
   },
 
   {
@@ -29,9 +35,14 @@ export const brands = [
     ],
     name: "Renfert",
     slogan: "Making Work Easy",
+    description:
+    "Reconocida por desarrollar materiales de alta calidad que brindan precisión, confianza y excelentes resultados clínicos.",
     logo: "/logos/renfert.png",
-    color: "bg-blue-800",
+    image: "/brands/tokuyama.jpg",
+    color: "bg-blue-500",
     glow: "shadow-slate-200/40",
+    link: "https://www.renfert.com/es/",
+    pdf: "",
   },
 
   {
@@ -45,9 +56,14 @@ export const brands = [
     ],
     name: "Shining 3D",
     slogan: "Digital Dentistry",
+    description:
+    "Reconocida por desarrollar materiales de alta calidad que brindan precisión, confianza y excelentes resultados clínicos.",
     logo: "/logos/Shining.png",
-    color: "bg-blue-800",
+    image: "/brands/tokuyama.jpg",
+    color: "bg-blue-500",
     glow: "shadow-indigo-400/40",
+    link: "https://shining3-d.vercel.app/",
+    pdf: "",
   },
 
   {
@@ -66,9 +82,14 @@ export const brands = [
     ],
     name: "Edenta",
     slogan: "Swiss Precision",
+    description:
+    "Reconocida por desarrollar materiales de alta calidad que brindan precisión, confianza y excelentes resultados clínicos.",
     logo: "/logos/edenta.png",
-    color: "bg-blue-800",
+    image: "/brands/tokuyama.jpg",
+    color: "bg-blue-500",
     glow: "shadow-red-400/40",
+    link: "https://www.edenta.com/es/",
+    pdf: "",
   },
 
   {
@@ -87,8 +108,13 @@ export const brands = [
     name: "Zhermack",
     slogan: "Your Impression Matters",
     logo: "/logos/zhermack.png",
-    color: "bg-blue-800",
+    description:
+    "Reconocida por desarrollar materiales de alta calidad que brindan precisión, confianza y excelentes resultados clínicos.",
+    image: "/brands/tokuyama.jpg",
+    color: "bg-blue-500",
     glow: "shadow-green-400/40",
+    link: "https://www.zhermack.com/es/",
+    pdf: "",
   },
 
   {
@@ -102,8 +128,13 @@ export const brands = [
     name: "Wave",
     slogan: "Next Generation Dental",
     logo: "/logos/Wave.png",
-    color: "bg-blue-800",
+    description:
+    "Reconocida por desarrollar materiales de alta calidad que brindan precisión, confianza y excelentes resultados clínicos.",
+    image: "/brands/tokuyama.jpg",
+    color: "bg-blue-500",
     glow: "shadow-sky-400/40",
+    link: "",
+    pdf: "",
   },
 
   {
@@ -121,8 +152,13 @@ export const brands = [
     name: "Vericom",
     slogan: "Next Generation Dental",
     logo: "/logos/vericom.png",
-    color: "bg-blue-800",
+    description:
+    "Reconocida por desarrollar materiales de alta calidad que brindan precisión, confianza y excelentes resultados clínicos.",
+    image: "/brands/tokuyama.jpg",
+    color: "bg-blue-500",
     glow: "shadow-sky-400/40",
+    link: "",
+    pdf: "",
   },
 
   {
@@ -137,8 +173,13 @@ export const brands = [
     name: "G&H",
     slogan: "Next Generation Dental",
     logo: "/logos/g&h.png",
-    color: "bg-blue-800",
+    description:
+    "Reconocida por desarrollar materiales de alta calidad que brindan precisión, confianza y excelentes resultados clínicos.",
+    image: "/brands/tokuyama.jpg",
+    color: "bg-blue-500",
     glow: "shadow-sky-400/40",
+    link: "",
+    pdf: "",
   },
 
   {
@@ -154,8 +195,13 @@ export const brands = [
     name: "Redon",
     slogan: "Next Generation Dental",
     logo: "/logos/redon.png",
-    color: "bg-blue-800",
+    description:
+    "Reconocida por desarrollar materiales de alta calidad que brindan precisión, confianza y excelentes resultados clínicos.",
+    image: "/brands/tokuyama.jpg",
+    color: "bg-blue-500",
     glow: "shadow-blue-200/40",
+    link: "",
+    pdf: "",
   },
 
   {
@@ -173,8 +219,13 @@ export const brands = [
     name: "IQ Dental",
     slogan: "Next Generation Dental",
     logo: "/logos/Iq.png",
-    color: "bg-blue-800",
+    description:
+    "Reconocida por desarrollar materiales de alta calidad que brindan precisión, confianza y excelentes resultados clínicos.",
+    image: "/brands/tokuyama.jpg",
+    color: "bg-blue-500",
     glow: "shadow-blue-200/40",
+    link: "",
+    pdf: "",
   },
 
   {
@@ -189,8 +240,13 @@ export const brands = [
     name: "BSM",
     slogan: "Next Generation Dental",
     logo: "/logos/bsm.png",
-    color: "bg-blue-800",
+    description:
+    "Reconocida por desarrollar materiales de alta calidad que brindan precisión, confianza y excelentes resultados clínicos.",
+    image: "/brands/tokuyama.jpg",
+    color: "bg-blue-500",
     glow: "shadow-blue-200/40",
+    link: "",
+    pdf: "",
   },
 
   {
@@ -206,8 +262,13 @@ export const brands = [
     name: "Audental",
     slogan: "Next Generation Dental",
     logo: "/logos/audentall.png",
-    color: "bg-blue-800",
+    description:
+    "Reconocida por desarrollar materiales de alta calidad que brindan precisión, confianza y excelentes resultados clínicos.",
+    image: "/brands/tokuyama.jpg",
+    color: "bg-blue-500",
     glow: "shadow-blue-200/40",
+    link: "https://www.audentalzir.com/",
+    pdf: "",
   },
 
   {
@@ -225,8 +286,13 @@ export const brands = [
     name: "Dentsply Sirona",
     slogan: "Next Generation Dental",
     logo: "/logos/dents.png",
-    color: "bg-blue-800",
+    description:
+    "Reconocida por desarrollar materiales de alta calidad que brindan precisión, confianza y excelentes resultados clínicos.",
+    image: "/brands/tokuyama.jpg",
+    color: "bg-blue-500",
     glow: "shadow-blue-200/40",
+    link: "",
+    pdf: "",
   },
 
   {
@@ -244,7 +310,13 @@ export const brands = [
     name: "Planmeca",
     slogan: "Next Generation Dental",
     logo: "/logos/planmecaa.png",
-    color: "bg-blue-800",
+    description:
+    "Reconocida por desarrollar materiales de alta calidad que brindan precisión, confianza y excelentes resultados clínicos.",
+    image: "/brands/tokuyama.jpg",
+    color: "bg-blue-500",
     glow: "shadow-blue-200/40",
+    link: "",
+    pdf: "",
   },
 ];
+
