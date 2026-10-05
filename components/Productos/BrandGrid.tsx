@@ -2,9 +2,7 @@
 
 import BrandExperience from "./BrandExperience";
 import { useEffect, useState } from "react";
-
 import { AnimatePresence, motion } from "motion/react";
-
 import { brands } from "../data/brands";
 import BrandCard from "./BrandCard";
 

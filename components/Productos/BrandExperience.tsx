@@ -14,7 +14,7 @@ interface Props {
     color: string;
     glow: string;
     link: string;
-    link2: string;
+    link2?: string;
     pdf: string;
   };
 
