@@ -1,6 +1,22 @@
-import { link } from "fs";
+export interface Brand {
+  id: string;
+  universo: string[];
+  especialidades: string[];
+  necesidades: string[];
+  name: string;
+  slogan: string;
+  description: string;
+  logo: string;
+  image: string;
+  image2: string;
+  color: string;
+  glow: string;
+  link: string;
+  link2?: string;
+  pdf: string;
+}
 
-export const brands = [
+export const brands: Brand[] = [
   {
   id: "tokuyama",
   universo: ["Clínica"],
