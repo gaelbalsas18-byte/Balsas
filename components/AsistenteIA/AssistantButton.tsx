@@ -18,7 +18,7 @@ export default function AssistantButtonProps({
     
     initial={{
         opacity: 0,
-        scale: 0.3,
+        scale: 0.4,
     }}
     animate={{
         opacity: 1,
@@ -34,7 +34,7 @@ export default function AssistantButtonProps({
     }}
 
     transition={{
-        duration: 0.25,
+        duration: 0.30,
     }}
 
     className="
