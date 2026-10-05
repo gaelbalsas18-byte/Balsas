@@ -34,7 +34,7 @@ export default function NovedadCard({
           src={novedad.imagen}
           alt={novedad.titulo}
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-contain transition-transform duration-500 group-hover:scale-105"
         />
       </div>
 
@@ -67,7 +67,7 @@ export default function NovedadCard({
         </p>
 
         {/* Título */}
-        <h3 className="mt-2 line-clamp-2 text-lg font-bold leading-tight text-gray-900">
+        <h3 className="mt-2 line-clamp-2 text-sm font-bold leading-tight text-gray-900">
           {novedad.titulo}
         </h3>
 

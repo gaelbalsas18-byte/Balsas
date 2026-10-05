@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { Manrope } from "next/font/google";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -14,7 +15,7 @@ const conceptos = [
   {
     palabra: "APRENDER",
     descripcion: "El conocimiento nos mueve.",
-    color: "#F59E0B",
+    color: "#f5b70b",
     glow: "rgba(245,158,11,0.45)",
     posicion:
       "left-[2%] top-[12%] sm:left-[5%] sm:top-[15%] lg:left-[10%] lg:top-[17%]",
@@ -22,8 +23,8 @@ const conceptos = [
   {
     palabra: "CONECTAR",
     descripcion: "Las grandes ideas nacen juntas.",
-    color: "#38BDF8",
-    glow: "rgba(56,189,248,0.45)",
+    color: "#1df532",
+    glow: "rgba(56, 248, 85, 0.45)",
     posicion:
       "right-[2%] top-[12%] sm:right-[5%] sm:top-[15%] lg:right-[10%] lg:top-[17%]",
   },
@@ -61,7 +62,7 @@ export default function Extra() {
   return (
     <section
       id="extra"
-      className={`${manrope.className} relative w-full overflow-hidden bg-white py-28 sm:py-36`}
+      className={`${manrope.className} relative w-full overflow-hidden bg-white py-16 sm:py-36`}
     >
       {/* ========================================================= */}
       {/* FONDO */}
@@ -133,49 +134,25 @@ export default function Extra() {
         {/* ======================================================= */}
 
         <div className="mx-auto max-w-3xl text-center">
-          <motion.span
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="
-              inline-flex
-              rounded-full
-              bg-[#0057b8]
-              px-5
-              py-2
-              text-xs
-              font-bold
-              tracking-[0.2em]
-              text-white
-              sm:text-sm
-            "
-          >
-            EL SIGUIENTE PASO
-          </motion.span>
+          <motion.div
+        initial={{ opacity: 0, y: -25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7 }}
+        className="mb-5 text-center"
+      >
 
-          <motion.h2
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="
-              mt-8
-              text-3xl
-              font-bold
-              leading-tight
-              tracking-tight
-              text-[#0057b8]
-              sm:text-5xl
-              lg:text-6xl
-            "
-          >
-            Todo lo que hacemos
-            <br />
-            <span className="text-black">
-              nos lleva hacia adelante.
-            </span>
-          </motion.h2>
+        <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.35em] text-[#244adf]/60">
+          BALSAS DENTAL
+        </p>
+
+        <h2 className="text-3xl font-bold tracking-tight text-[#1736a8] sm:text-4xl">
+          El siguiente paso
+        </h2>
+
+        <div className="mx-auto mt-4 h-[2px] w-14 rounded-full bg-[#244adf]" />
+
+      </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -190,7 +167,7 @@ export default function Extra() {
               leading-7
               text-gray-500
               sm:text-base
-              
+              lg:xs
             "
           >
             Conocimiento, experiencias y personas que comparten una misma
@@ -210,7 +187,7 @@ export default function Extra() {
             h-[430px]
             w-full
             max-w-[950px]
-            sm:mt-24
+            sm:mt-8
             sm:h-[520px]
           "
         >
@@ -423,7 +400,7 @@ export default function Extra() {
                 rounded-full
                 border
                 border-gray-100
-                bg-yellow-200
+                bg-blue-400
                 sm:h-32
                 sm:w-32
               "
@@ -592,7 +569,7 @@ export default function Extra() {
           }}
           className="text-center"
         >
-          <p className="text-xl font-bold text-black sm:text-2xl">
+          <p className="text-xl font-bold text-black sm:text-xl">
             Y esto...
           </p>
 
@@ -607,7 +584,7 @@ export default function Extra() {
               mt-2
               text-2xl
               font-bold
-              sm:text-4xl
+              sm:text-xl
             "
           >
             apenas comienza.
@@ -617,91 +594,14 @@ export default function Extra() {
         {/* ========================================================= */}
         {/* BOTÓN */}
         {/* ========================================================= */}
-
-        <motion.div
-          initial={{
-            opacity: 0,
-            scale: 0.9,
-          }}
-          whileInView={{
-            opacity: 1,
-            scale: 1,
-          }}
-          viewport={{ once: true }}
-          transition={{
-            duration: 0.8,
-            delay: 0.6,
-          }}
-          className="mt-14 flex justify-center"
-        >
-          <a
-            href="#footer"
-            className="
-              group
-              flex
-              items-center
-              gap-4
-              rounded-full
-              border
-              border-gray-200
-              bg-white
-              px-6
-              py-3
-              text-sm
-              font-semibold
-              text-[#0057b8]
-              shadow-sm
-              transition-all
-              duration-300
-              hover:border-[#2790ec]/40
-              hover:shadow-[0_10px_35px_rgba(39,144,236,0.12)]
-            "
-          >
-            <span>Conoce más de Balsas</span>
-
-            <span
-              className="
-                flex
-                h-8
-                w-8
-                items-center
-                justify-center
-                rounded-full
-                bg-[#0057b8]
-                text-white
-                transition-transform
-                duration-300
-                group-hover:translate-y-1
-              "
-            >
-              ↓
-            </span>
-          </a>
-        </motion.div>
       </div>
-
-      {/* ========================================================= */}
-      {/* LÍNEA HACIA FOOTER */}
-      {/* ========================================================= */}
-
-      <motion.div
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.2 }}
-        className="
-          absolute
-          bottom-0
-          left-0
-          h-px
-          w-full
-          origin-center
-          bg-gradient-to-r
-          from-transparent
-          via-[#0057b8]
-          to-transparent
-        "
-      />
+              <div className="text-center">
+              <Link href="#footer">
+                  <button className="mt-12 inline-block border border-blue-700 bg-white px-10 py-3 text-sm uppercase tracking-wide text-blue-700 transition-all duration-300 hover:bg-blue-700 hover:text-white">
+                     Conoce Mas  ↓
+                  </button>
+                 </Link>
+              </div>
     </section>
   );
 }

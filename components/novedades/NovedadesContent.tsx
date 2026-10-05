@@ -24,143 +24,73 @@ const novedades: Novedad[] = [
     id: 1,
     universo: "Clínica",
     marca: "Tokuyama",
-    etiquetas: ["Resinas dentales", "Restaurativa"],
+    etiquetas: ["Adhesivo", "Restaurativa"],
     fecha: "11 Agosto 2026",
     año: "2026",
-    titulo: "Nuevas soluciones restaurativas",
+    titulo: "Nuevo adhesivo Tokuyama Universal Bond",
     descripcion:
-      "Descubre las nuevas soluciones para procedimientos restaurativos.",
-    imagen: "/novedades/novedad-1.jpg",
+      "Es un sistema adhesivo para restauraciones directas e indirectas que puede utilizarse con técnicas de autograbado, grabado selectivo y grabado total.",
+    imagen: "/Novedades/UBond.jpg",
     logo: "/logos/marcas/tokuyama.png",
   },
 
   {
     id: 2,
     universo: "Clínica",
-    marca: "Zhermack",
-    etiquetas: ["Restaurativa"],
+    marca: "Tokuyama",
+    etiquetas: ["Restaurativa", "Composite"],
     fecha: "05 Agosto 2026",
     año: "2026",
-    titulo: "Nuevos materiales para clínica",
+    titulo: "Nuevo Omnicrhoma",
     descripcion:
-      "Conoce las novedades y soluciones para profesionales de la clínica dental.",
-    imagen: "/novedades/novedad-2.jpg",
-    logo: "/logos/marcas/zhermack.jpg",
+      "Es el primer compuesto universal del mundo que combina estéticamente a casi todos los pacientes con un solo tono. Sus rellenos supra-nano esféricos de tamaño uniforme permiten a PALFIQUE OMNICHROMA combinar todos los tonos, una ciencia que llamamos Tecnología Cromática Inteligente.",
+    imagen: "/novedades/Omnicrhoma.jpg",
+    logo: "/logos/marcas/tokuyama.png",
   },
 
   {
     id: 3,
     universo: "Laboratorio",
-    marca: "Renfert",
+    marca: "Vericom",
     etiquetas: ["Laboratorio", "Restaurativa"],
     fecha: "28 Julio 2026",
     año: "2026",
-    titulo: "Soluciones para laboratorio",
+    titulo: "Care B&C",
     descripcion:
-      "Productos y soluciones para optimizar el trabajo en laboratorio dental.",
-    imagen: "/novedades/novedad-3.jpg",
-    logo: "/logos/marcas/renfert.jpg",
+      "El producto dental Vericom Care C y B está diseñado para facilitar su uso. Su proceso de aplicación intuitivo reduce el tiempo en la silla, beneficiando tanto al dentista como al paciente. Con una adaptabilidad superior, logra una estética impresionante. Esto la hace ideal para clínicas que buscan altos estándares.",
+    imagen: "/novedades/Care.jpg",
+    logo: "/logos/marcas/ver.jpg",
   },
 
   {
     id: 4,
-    universo: "Laboratorio Digital",
-    marca: "Shining",
-    etiquetas: ["Laboratorio Digital"],
+    universo: "Laboratorio",
+    marca: "Renfert",
+    etiquetas: [""],
     fecha: "20 Julio 2026",
     año: "2026",
-    titulo: "Innovación en laboratorio digital",
+    titulo: "Silent Xs",
     descripcion:
-      "Tecnología para llevar el laboratorio dental al siguiente nivel.",
-    imagen: "/novedades/novedad-4.jpg",
-    logo: "/logos/marcas/Shining.png",
+      "SILENT XS es una unidad de succión totalmente móvil, diseñada específicamente para clínicas dentales y laboratorios internos. Su diseño compacto es impresionante y lo hace ideal para trabajos de acabado menores y a pequeña escala, por ejemplo, al realizar retoques finales en restauraciones temporales.",
+    imagen: "/Novedades/Pulidora.jpg",
+    logo: "/logos/marcas/renfert.jpg",
   },
 
   {
     id: 5,
-    universo: "Clínica",
-    marca: "Vericom",
-    etiquetas: ["Adhesivos dentales"],
+    universo: "Laboratorio",
+    marca: "Redon",
+    etiquetas: ["Fresadora"],
     fecha: "15 Julio 2026",
     año: "2026",
-    titulo: "Nuevos adhesivos dentales",
+    titulo: "La solución más sencilla para el fresado Woom",
     descripcion:
-      "Soluciones adhesivas para procedimientos clínicos.",
-    imagen: "/novedades/novedad-5.jpg",
-    logo: "/logos/marcas/vericom.png",
+      "Realiza el fresado de tus bloques de zirconio de forma rapida y sencilla cubierta electrónica para cambiador automático de herramientas (ATC) Abre y cierra automáticamente durante el cambio de fresas. ¡Proteje tus fresas del polvo, las virutas y otros factores externos sin necesidad de intervención manual!.",
+    imagen: "/Novedades/Woom.jpg",
+    logo: "/logos/marcas/redon.png",
   },
 
-  {
-    id: 6,
-    universo: "Laboratorio",
-    marca: "Audental",
-    etiquetas: ["Restaurativa"],
-    fecha: "10 Julio 2026",
-    año: "2026",
-    titulo: "Nuevas soluciones Audental",
-    descripcion:
-      "Conoce las novedades para el laboratorio dental.",
-    imagen: "/novedades/novedad-6.jpg",
-    logo: "/logos/marcas/audental.png",
-  },
-
-  {
-    id: 7,
-    universo: "Clínica",
-    marca: "Tokuyama",
-    etiquetas: ["Resinas dentales", "Restaurativa"],
-    fecha: "11 Agosto 2026",
-    año: "2026",
-    titulo: "Nuevas soluciones restaurativas",
-    descripcion:
-      "Descubre las nuevas soluciones para procedimientos restaurativos.",
-    imagen: "/novedades/novedad-1.jpg",
-    logo: "/logos/marcas/tokuyama.png",
-  },
-
-  {
-    id: 8,
-    universo: "Clínica",
-    marca: "Tokuyama",
-    etiquetas: ["Resinas dentales", "Restaurativa"],
-    fecha: "32 Agosto 2026",
-    año: "2026",
-    titulo: "Nuevas soluciones restaurativas",
-    descripcion:
-      "Descubre las nuevas soluciones para procedimientos restaurativos.",
-    imagen: "/novedades/novedad-1.jpg",
-    logo: "/logos/marcas/tokuyama.png",
-  },
-
-  {
-    id: 9,
-    universo: "Clínica",
-    marca: "Tokuyama",
-    etiquetas: ["Resinas dentales", "Restaurativa"],
-    fecha: "33 Agosto 2026",
-    año: "2026",
-    titulo: "Nuevas soluciones restaurativas",
-    descripcion:
-      "Descubre las nuevas soluciones para procedimientos restaurativos.",
-    imagen: "/novedades/novedad-1.jpg",
-    logo: "/logos/marcas/tokuyama.png",
-  },
-
-  {
-    id: 10,
-    universo: "Clínica",
-    marca: "Tokuyama",
-    etiquetas: ["Resinas dentales", "Restaurativa"],
-    fecha: "34 Agosto 2026",
-    año: "2026",
-    titulo: "Nuevas soluciones restaurativas",
-    descripcion:
-      "Descubre las nuevas soluciones para procedimientos restaurativos.",
-    imagen: "/novedades/novedad-1.jpg",
-    logo: "/logos/marcas/tokuyama.png",
-  },
 ];
-
 
 export default function NovedadesContent() {
 
@@ -183,7 +113,6 @@ export default function NovedadesContent() {
   ];
 
   const [textoCentroActual, setTextoCentroActual] = useState(0);
-
   /*
    * Filtros
    */
@@ -334,30 +263,47 @@ export default function NovedadesContent() {
               {/* ===================== */}
               {/* TARJETA CENTRADA */}
               {/* ===================== */}
-              <div className="flex min-h-[500px] flex-col items-center justify-center overflow-hidden rounded-3xl bg-[#2790ec] px-8 py-12 text-center shadow-sm md:min-h-[600px] md:px-12">
+              <div className="relative flex min-h-[500px] flex-col items-center justify-center overflow-hidden rounded-3xl px-8 py-12 text-center shadow-sm md:min-h-[600px] md:px-12">
 
-                {/* Logo Balsas */}
-                <div className="relative h-auto w-[180px] md:w-[220px]">
+                {/* Imagen de fondo */}
+                <Image
+                  src="/central.jpg"
+                  alt=""
+                  fill
+                  className="object-cover"
+                />
 
-                  <Image
-                    src="/logos/BalsasTrans.png"
-                    alt="Balsas Dental"
-                    width={220}
-                    height={90}
-                    className="h-auto w-full object-contain"
-                  />
-                </div>
+                {/* Capa oscura para que el contenido se lea mejor */}
+                <div className="absolute inset-0 bg-black/35" />
 
-                {/* Separador */}
-                <div className="my-8 h-px w-16 bg-white/40" />
-                {/* Texto dinámico */}
-                <div className="min-h-[120px] flex items-center justify-center">
-                  <p
-                    key={textoCentroActual}
-                    className="text-xl font-medium leading-relaxed text-white transition-opacity duration-500 md:text-2xl"
-                  >
-                    {textosCentro[textoCentroActual]}
-                  </p>
+                {/* Contenido */}
+                <div className="relative z-10 flex flex-col items-center">
+
+                  {/* Logo Balsas */}
+                  <div className="relative h-auto w-[180px] md:w-[220px]">
+
+                    <Image
+                      src="/logos/BalsasTrans.png"
+                      alt="Balsas Dental"
+                      width={220}
+                      height={90}
+                      className="h-auto w-full object-contain"
+                    />
+                  </div>
+
+                  {/* Separador */}
+                  <div className="my-8 h-px w-16 bg-white/40" />
+
+                  {/* Texto dinámico */}
+                  <div className="flex min-h-[120px] items-center justify-center">
+                    <p
+                      key={textoCentroActual}
+                      className="text-xl font-medium leading-relaxed text-white transition-opacity duration-500 md:text-2xl"
+                    >
+                      {textosCentro[textoCentroActual]}
+                    </p>
+                  </div>
+
                 </div>
               </div>
 
@@ -415,4 +361,3 @@ export default function NovedadesContent() {
     </>
   );
 }
-

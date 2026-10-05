@@ -1,20 +1,10 @@
+
 "use client";
 
 import FadeIn from "../animations/FadeIn";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import {
-    EffectCoverflow,
-    Autoplay,
-    Navigation,
-} from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/navigation";
 import Image from "next/image";
-
+import { useEffect, useState } from "react";
 import { Manrope } from "next/font/google";
 
 const manrope = Manrope({
@@ -23,160 +13,186 @@ const manrope = Manrope({
 });
 
 const marcas = [
-    {
-    nombre: "Tokuyama",
-    imagen: "/logos/Tokuyama.png",
-    descripcion: "Contribuyendo al matenimiento y mejora de una vida saludable en todo el mundo con la tecnología del siglo",
-    },
+  {
+    imagen: "/Marcas/Tokuyama.jpg",
+    descripcion:
+      "Contribuyendo al mantenimiento y mejora de una vida saludable en todo el mundo con la tecnología del siglo",
+  },
 
-    {
-    nombre: "Renfert",
-    imagen: "/logos/renfert.png",
-     descripcion: "Comprometidos con el objetivo de simplificarte el trabajo en el laboratorio y la clinica",
-    },
+  {
+    imagen: "/Marcas/Renfert.jpg",
+    descripcion:
+      "Comprometidos con el objetivo de simplificarte el trabajo en el laboratorio y la clínica",
+  },
 
-    {
-    nombre: "Shining",
-    imagen: "/logos/Shining.png", 
-    descripcion: "Soluciones de escaneo 3D de alta precisión para todos",
-    },
+  {
+    imagen: "/Marcas/Shining.jpg",
+    descripcion:
+      "Soluciones de escaneo 3D de alta precisión para todos",
+  },
 
-    {
-    nombre: "Edenta",
-    imagen: "/logos/edenta.png",
-    descripcion: "Presente en todo el mundo por sus instrumentos de precisíon innovadores, dando un sello de calidad ",
-    },
+  {
+    imagen: "/Marcas/Edenta.jpg",
+    descripcion:
+      "Presente en todo el mundo por sus instrumentos de precisión innovadores, dando un sello de calidad",
+  },
 
-    {
-    nombre: "Zhermack",
-    imagen: "/logos/zhermack.png",
-    descripcion: "Materiales y soluciones para los sectores dental, industrial y del bienestar",
-    },
+  {
+    imagen: "/Marcas/Zhermack.jpg",
+    descripcion:
+      "Materiales y soluciones para los sectores dental, industrial y del bienestar",
+  },
 
-    {
-    nombre: "Wave Dental",
-    imagen: "/logos/Wave.png",
-    descripcion: "Los dentistas ya no tienen que elegir entre rendimiento y precio, ni entre precio y disponibilidad.",
-    },
+  {
+    imagen: "/Marcas/Wave.jpg",
+    descripcion:
+      "Los dentistas ya no tienen que elegir entre rendimiento y precio, ni entre precio y disponibilidad.",
+  },
 
-    {
-    nombre: "Vericom",
-    imagen: "/logos/vericom.png",
-    descripcion: "El lema de Vericom ha sido 'la calidad primero' Aunque todas las partes del cuerpo son importantes para el ser humano, los dientes se han considerado una de las partes más importantes de nuestro cuerpo.",
-    },
+  {
+    imagen: "/Marcas/Vericom.jpg",
+    descripcion:
+      "El lema de Vericom ha sido 'la calidad primero'. Aunque todas las partes del cuerpo son importantes para el ser humano, los dientes se han considerado una de las partes más importantes de nuestro cuerpo.",
+  },
 
-    {
-    nombre: "G&H",
-    imagen: "/logos/g&h.png",
-    descripcion: "G&H Orthodontics ha encarnado una calidad y un servicio excepcionales. Como fabricante, poseemos todo lo que hacemos con un nivel de responsabilidad que no se encuentra en ningún otro lugar.",
-    },
-    
-    {
-    nombre: "Dentsply",
-    imagen: "/logos/dents.png",
-    descripcion: "Dentsply Sirona a establecido un estándar global para la fabricación dental, el desarrollo tecnológico, el tratamiento digital y la educación clínica.",
-    },
-    
-    {
-    nombre: "Audental",
-    imagen: "/logos/Audental.png",
-    descripcion: "Audental es un fabricante líder de biomateriales dentales, cerámica de vidrio, una amplia gama de aleaciones metales dentales y soluciones digitales digitales avanzadas.",
-    },
+  {
+    imagen: "/Marcas/G&H.jpg",
+    descripcion:
+      "G&H Orthodontics ha encarnado una calidad y un servicio excepcionales. Como fabricante, poseemos todo lo que hacemos con un nivel de responsabilidad que no se encuentra en ningún otro lugar.",
+  },
+
+  {
+    imagen: "/Marcas/Dentsplay.jpg",
+    descripcion:
+      "Dentsply Sirona ha establecido un estándar global para la fabricación dental, el desarrollo tecnológico, el tratamiento digital y la educación clínica.",
+  },
+
+  {
+    imagen: "/Marcas/Audental.jpg",
+    descripcion:
+      "Audental es un fabricante líder de biomateriales dentales, cerámica de vidrio, una amplia gama de aleaciones metales dentales y soluciones digitales avanzadas.",
+  },
 ];
 
 export default function Marcas() {
-    return (
-            <section
-                id="Marcas"
-                className="bg-blue-800 py-24">
-                <div className={`${manrope.className} mx-auto max-w-7xl px-6`}>
-                    <FadeIn>
-                    <div className="text-center">
-                    <span className="rounded-full bg-white px-6 py-2 font-semibold text-blue-700">
+  const [marcaActiva, setMarcaActiva] = useState(0);
 
-                        MARCAS
+  useEffect(() => {
+    const intervalo = setInterval(() => {
+      setMarcaActiva((actual) => (actual + 1) % marcas.length);
+    }, 5000);
 
-                    </span>
-                    <h3 className="text-sm uppercase tracking-widest text-white font-semibold mb-3 text-center mt-4">
-                        Balsas Dental
-                    </h3>
-                    </div>
-                    
-                    <p className="py-3 text-center text-lg text-white ">
-                        Manejamos las mejores marcas para que obtengas
-                        <br />
-                        <strong>¡Los mejores resultados!</strong>
-                    </p>
-                    </FadeIn>
+    return () => clearInterval(intervalo);
+  }, []);
 
-                    <Swiper
-                        effect="coverflow"
-                        grabCursor={true}
-                        centeredSlides={true}
-                        slidesPerView="auto"
-                        loop={true}
-                        navigation={true}
-                        autoplay={{
-                            delay: 4000,
-                            disableOnInteraction: false,
-                        }}
-                        coverflowEffect={{
-                            rotate: 0,
-                            stretch: 0,
-                            depth: 180,
-                            modifier: 2,
-                            slideShadows: false,
-                            scale: 0.85,
-                        }}
-                        modules={[
-                            EffectCoverflow,
-                            Navigation,
-                            Autoplay,
-                        ]}
-                    >
-                        {marcas.map((marca, index) => (
-                            <SwiperSlide
-                                key={index}
-                                className="!w-[320px] py-1"
-                            >
-                                <div className=" bg-transparent p-8 transition-all duration-500 hover:-translate-y-2">
+  return (
+<section
+  id="Marcas"
+  className="relative min-h-[100svh] overflow-hidden md:min-h-[120vh]"
+>
+      {/* =====================================================
+          BACKGROUNDS
+          ===================================================== */}
 
-                                    <div className="flex h-60 items-center justify-center">
+      {marcas.map((marca, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-1000 ${
+            marcaActiva === index
+              ? "opacity-100"
+              : "pointer-events-none opacity-0"
+          }`}
+        >
+          <Image
+            src={marca.imagen}
+            alt=""
+            fill
+            priority={index === 0}
+            sizes="100vw"
+            className="object-cover object-center md:object-center"
+            />
+        </div>
+      ))}
 
-                                        <Image
-                                            src={marca.imagen}
-                                            alt={marca.nombre}
-                                            width={220}
-                                            height={220}
-                                            className="object-contain"
-                                        />
-                                    </div>
-                                </div>
-                                 <div className="brand-info mt-6 text-center">
-                                    <h3 className="text-2xl font-bold text-white">
-                                        {marca.nombre}
-                                    </h3>
-                                    
-                                    <p className="mt-3 text-white">
-                                        {marca.descripcion}
-                                    </p>
-                                    </div>
-                            </SwiperSlide>  
-                        ))}
-                    </Swiper>
-                    <FadeIn>
-                    <div className="text-center">
-                          <Link href="/Productos">
-                          <button className="mt-5 inline-block border border-white bg-blue-800 px-10 py-3 text-sm uppercase tracking-wide text-white transition-all duration-300 hover:bg-white hover:text-blue-700">
-                            Ver Productos
-                          </button>
-                          </Link>
-                    </div>
-                    </FadeIn>
-                </div>
-                
-            </section>
-    );
+      {/* =====================================================
+          CONTENIDO
+          ===================================================== */}
+
+      <div
+        className={`${manrope.className} relative z-10 flex min-h-[120vh] items-center justify-center px-6 py-24`}
+        >
+        <div className="mx-auto w-full max-w-4xl text-center">
+
+          {/* =================================================
+              ENCABEZADO
+              ================================================= */}
+
+          <FadeIn>
+            <div className="-translate-y-54">
+                <span className="inline-block rounded-full bg-white px-6 py-2 font-semibold text-blue-700">
+                MARCAS
+                </span>
+
+                <h3 className="mt-4 mb-3 text-sm font-semibold uppercase tracking-widest text-white">
+                Balsas Dental
+                </h3>
+
+                <p className="mx-auto max-w-2xl py-3 text-lg leading-relaxed text-white md:text-xl">
+                Manejamos las mejores marcas para que obtengas
+                <br className="hidden md:block" />
+                <strong>¡Los mejores resultados!</strong>
+                </p>
+            </div>
+            </FadeIn>
+
+          {/* =================================================
+              DESCRIPCIÓN DINÁMICA
+              ================================================= */}
+
+          <div
+            key={marcaActiva}
+            className="mx-auto translate-y-40 max-w-3xl"
+          >
+            <p className="text-lg leading-relaxed text-white drop-shadow-lg md:text-lg">
+              {marcas[marcaActiva].descripcion}
+            </p>
+          </div>
+
+          {/* =================================================
+              BOTÓN
+              ================================================= */}
+
+          <FadeIn>
+            <div className="translate-y-45">
+              <Link href="/Productos">
+                <button className="inline-block border border-white bg-transparent px-10 py-3 text-sm uppercase tracking-wide text-white transition-all duration-300 hover:bg-white hover:text-blue-700">
+                  Ver Marcas
+                </button>
+              </Link>
+            </div>
+          </FadeIn>
+
+          {/* =================================================
+              INDICADORES
+              ================================================= */}
+
+          <div className="translate-y-55 flex justify-center gap-2">
+            {marcas.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setMarcaActiva(index)}
+                aria-label={`Mostrar marca ${index + 1}`}
+                className={`h-2 rounded-full transition-all duration-500 ${
+                  marcaActiva === index
+                    ? "w-8 bg-white"
+                    : "w-2 bg-white/50"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
-
 

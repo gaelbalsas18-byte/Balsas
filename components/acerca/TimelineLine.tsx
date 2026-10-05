@@ -1,31 +1,88 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, type MotionValue } from "motion/react";
 
 type Props = {
-  progress: any;
+  progress: MotionValue<number>;
 };
 
 export default function TimelineLine({ progress }: Props) {
   return (
     <>
-      <div className="absolute left-0 right-0 top-5 h-[4px] rounded-full bg-gray-200" />
+      {/* Línea base - Desktop */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-[12.5%]
+          right-[12.5%]
+          top-7
+          hidden
+          h-[3px]
+          rounded-full
+          bg-slate-200
+          md:block
+        "
+      />
 
+      {/* Línea animada - Desktop */}
       <motion.div
         style={{
           scaleX: progress,
           transformOrigin: "left",
         }}
         className="
-            absolute
-            left-0
-            top-5
-            h-[4px]
-            w-full
-            rounded-full
-            bg-gradient-to-r
-            from-blue-700
-            to-cyan-400
+          pointer-events-none
+          absolute
+          left-[12.5%]
+          right-[12.5%]
+          top-7
+          hidden
+          h-[3px]
+          rounded-full
+          bg-gradient-to-r
+          from-blue-700
+          via-blue-600
+          to-cyan-400
+          md:block
+        "
+      />
+
+      {/* Línea vertical - Mobile */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          bottom-0
+          left-1/2
+          top-7
+          w-[3px]
+          -translate-x-1/2
+          rounded-full
+          bg-slate-200
+          md:hidden
+        "
+      />
+
+      {/* Línea animada vertical - Mobile */}
+      <motion.div
+        style={{
+          scaleY: progress,
+          transformOrigin: "top",
+        }}
+        className="
+          pointer-events-none
+          absolute
+          bottom-0
+          left-1/2
+          top-7
+          w-[3px]
+          -translate-x-1/2
+          rounded-full
+          bg-gradient-to-b
+          from-blue-700
+          to-cyan-400
+          md:hidden
         "
       />
     </>

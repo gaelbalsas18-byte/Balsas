@@ -155,7 +155,8 @@ export default function Footer() {
 
               <ul className="mt-6 space-y-4">
 
-                <li>
+               {/* 
+               <li>
                   <a
                     href="https://www.bioden.mx/"
                     target="_blank"
@@ -171,23 +172,7 @@ export default function Footer() {
                     </span>
                   </a>
                 </li>
-
-                <li>
-                  <a
-                    href="https://wa.me/525512345678"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-center text-sm text-white/60 transition-all duration-300 hover:text-white"
-                  >
-                    <span className="mr-2 text-[#2790ec] opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100">
-                      →
-                    </span>
-
-                    <span className="transition-transform duration-300 group-hover:translate-x-1">
-                      Asesor
-                    </span>
-                  </a>
-                </li>
+                */}
 
                 <li>
                   <Link

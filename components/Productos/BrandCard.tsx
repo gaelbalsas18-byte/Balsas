@@ -6,13 +6,12 @@ import { motion } from "motion/react";
 interface Props {
   brand: {
     id: string;
-    name: string;
     slogan: string;
     logo: string;
+    image: string;
     color: string;
     glow: string;
   };
-
   onClick: () => void;
 }
 
@@ -20,136 +19,94 @@ export default function BrandCard({
   brand,
   onClick,
 }: Props) {
-
   return (
-
     <motion.div
-
       layoutId={brand.id}
-
       onClick={onClick}
-
       whileHover={{
         y: -12,
       }}
-
       whileTap={{
-        scale: .97,
+        scale: 0.97,
       }}
-
       initial={{
         opacity: 0,
         y: 60,
       }}
-
       whileInView={{
         opacity: 1,
         y: 0,
       }}
-
       viewport={{
         once: true,
       }}
-
       transition={{
-        duration: .6,
+        duration: 0.6,
       }}
-
       style={{
         cursor: "pointer",
       }}
-
       className="group relative overflow-hidden rounded-[38px] shadow-2xl"
     >
 
-      {/* Fondo */}
+      {/* ===================== */}
+      {/* COLOR DE FONDO */}
+      {/* ===================== */}
 
       <div
         className={`
           absolute inset-0
-          bg-gradient-to-br
           ${brand.color}
         `}
       />
 
-      {/* Glow */}
+      {/* ===================== */}
+      {/* OVERLAY */}
+      {/* ===================== */}
 
-      <div
-        className="
-          absolute
-          -right-20
-          -top-20
-          h-72
-          w-72
-          rounded-full
-          bg-white/20
-          blur-[90px]
-          transition-all
-          duration-700
-          group-hover:scale-125
-        "
-      />
+      <div className="absolute inset-0 bg-black/25 transition-colors duration-500 group-hover:bg-black/15" />
 
-      {/* Overlay */}
+      {/* ===================== */}
+      {/* CONTENIDO */}
+      {/* ===================== */}
 
-      <div className="absolute inset-0 bg-black/10"/>
+      <div className="relative z-10 flex h-[420px] flex-col justify-between p-10 md:p-15">
 
-      {/* Contenido */}
-
-      <div className="relative z-10 flex h-[420px] flex-col justify-between p-15">
-
-        {/* Logo */}
+        {/* ===================== */}
+        {/* LOGO CENTRADO */}
+        {/* ===================== */}
 
         <motion.div
-
           whileHover={{
-            scale: 1.08,
+            scale: 1.05,
           }}
-
           transition={{
-            duration: .3,
+            duration: 0.3,
           }}
-
-          className="flex justify-center"
-
+          className="flex justify-center pt-8"
         >
-
-          <Image
-            src={brand.logo}
-            alt={brand.name}
-            width={260}
-            height={160}
-            className="object-contain drop-shadow-2xl"
-          />
-
+          <div className="relative h-[80px] w-[150px] md:h-[160px] md:w-[220px]">
+            <Image
+              src={brand.logo}
+              alt={`${brand.id} logo`}
+              fill
+              className="object-contain drop-shadow-2xl"
+            />
+          </div>
         </motion.div>
 
-        {/* Información */}
+        {/* ===================== */}
+        {/* INFORMACIÓN */}
+        {/* ===================== */}
 
         <div>
 
-          <h2 className="text-4xl font-black text-white">
-
-            {brand.name}
-
-          </h2>
-
-          <p className="mt-3 leading-relaxed text-white/90">
-
-            {brand.slogan}
-
-          </p>
-
           <motion.div
-
             whileHover={{
               x: 8,
             }}
-
             className="mt-8 flex items-center gap-3 text-lg font-semibold text-white"
-
           >
-
             Explorar
 
             <svg
@@ -165,7 +122,6 @@ export default function BrandCard({
                 strokeLinejoin="round"
               />
             </svg>
-
           </motion.div>
 
         </div>
@@ -173,7 +129,5 @@ export default function BrandCard({
       </div>
 
     </motion.div>
-
   );
-
 }

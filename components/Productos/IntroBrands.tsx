@@ -32,35 +32,36 @@ export default function IntroBrands({
 
       <div className="relative mx-auto flex max-w-5xl flex-col items-center px-6 text-center">
 
-        <motion.span
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="rounded-full bg-blue-800 px-6 py-2 font-semibold text-white"
-        >
-          MARCAS INTERNACIONALES
-        </motion.span>
+         <motion.div
+        initial={{ opacity: 0, y: -25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7 }}
+        className="mb-10 text-center"
+      >
 
-        <motion.h2
-          initial={{ opacity: 0, y: 35 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mt-8 text-5xl font-black text-slate-900"
-        >
-          Trabajamos únicamente con
+        <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.35em] text-[#244adf]/60">
+          BALSAS DENTAL
+        </p>
 
-          <span className="block bg-gray-400 bg-clip-text text-transparent">
-            fabricantes líderes
-          </span>
-        </motion.h2>
+        <h2 className="text-3xl font-bold tracking-tight text-[#1736a8] sm:text-4xl">
+          Marcas internacionales
+        </h2>
+
+        <div className="mx-auto mt-4 h-[2px] w-14 rounded-full bg-[#244adf]" />
+
+        <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-gray-500">
+          Encuentra las mejores marcas que manejamos para ti.
+        </p>
+
+      </motion.div>
 
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-8 max-w-3xl text-xl leading-9 text-black"
+          className="mt-8 max-w-3xl text-lg leading-9 text-black"
         >
           Cada marca representa años de investigación,
           innovación y calidad para brindar soluciones

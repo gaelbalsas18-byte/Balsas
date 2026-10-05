@@ -19,7 +19,7 @@ export default function EscuelaPage() {
   {
     nombre: "Universidad Anáhuac",
     ciudad: "Ciudad de México",
-    curso: "Curso de actualización odontológica",
+    curso: "ALEJANDRO",
     descripcion:
       "Experiencias de aprendizaje donde la teoría y la práctica se encuentran.",
     fotos: [
@@ -33,7 +33,7 @@ export default function EscuelaPage() {
   {
     nombre: "Universidad La Salle",
     ciudad: "Ciudad de México",
-    curso: "Formación y actualización",
+    curso: "HUGO",
     descripcion:
       "Compartiendo conocimiento, innovación y nuevas soluciones para la odontología.",
     fotos: [
@@ -47,7 +47,7 @@ export default function EscuelaPage() {
   {
     nombre: "UNITEC",
     ciudad: "Ciudad de México",
-    curso: "Innovación aplicada",
+    curso: "KARLA",
     descripcion:
       "Nuevas experiencias para las futuras generaciones de profesionales.",
     fotos: [
@@ -61,7 +61,7 @@ export default function EscuelaPage() {
   {
     nombre: "Universidad del Valle de México",
     ciudad: "México",
-    curso: "Experiencia práctica",
+    curso: "ALAN DARDON",
     descripcion:
       "Acercando nuevas tecnologías y materiales al entorno académico.",
     fotos: [
@@ -75,7 +75,7 @@ export default function EscuelaPage() {
   {
     nombre: "Universidad Autónoma",
     ciudad: "México",
-    curso: "Educación e innovación",
+    curso: "OCTAVIO RANGEL",
     descripcion:
       "Formación continua para mantenerse al día con la evolución odontológica.",
     fotos: [
@@ -89,7 +89,7 @@ export default function EscuelaPage() {
   {
     nombre: "Escuela de Odontología",
     ciudad: "México",
-    curso: "Capacitación especializada",
+    curso: "JOSE OJEDA",
     descripcion:
       "Conocimiento y práctica para transformar la experiencia profesional.",
     fotos: [
@@ -103,7 +103,7 @@ export default function EscuelaPage() {
   {
     nombre: "Centro de Formación",
     ciudad: "México",
-    curso: "Aprender haciendo",
+    curso: "MAURICIO MADERA",
     descripcion:
       "Experiencias prácticas que acercan la innovación a los profesionales.",
     fotos: [
@@ -119,72 +119,10 @@ export default function EscuelaPage() {
     <main className={`${manrope.className} min-h-screen bg-white`}>
 
       {/* =====================================================
-          HERO
-      ===================================================== */}
-
-      <section className="relative overflow-hidden px-6 pb-20 pt-16 sm:px-10 md:pb-28 md:pt-24 lg:px-16">
-        <div className="mx-auto max-w-7xl">
-
-          {/* Etiqueta */}
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-block rounded-full bg-[#2790ec] px-5 py-2 text-sm font-semibold text-white">
-              EDUCACIÓN CONTINUA
-            </span>
-          </motion.div>
-
-          {/* Título */}
-
-          <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-[1.4fr_0.6fr] md:items-end">
-
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-5xl font-bold leading-[0.95] tracking-tight text-black sm:text-6xl md:text-7xl lg:text-8xl"
-            >
-              APRENDE.
-              <br />
-              <span className="text-[#2790ec]">EXPERIMENTA.</span>
-              <br />
-              EVOLUCIONA.
-            </motion.h1>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="max-w-sm md:pb-2"
-            >
-              <p className="text-base leading-relaxed text-neutral-600 sm:text-lg">
-                Espacios de formación donde la innovación odontológica
-                se convierte en experiencia.
-              </p>
-            </motion.div>
-
-          </div>
-
-          {/* Linea */}
-
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="mt-12 h-px origin-left bg-black/20"
-          />
-        </div>
-      </section>
-
-
-      {/* =====================================================
           INTRODUCCIÓN
       ===================================================== */}
 
-      <section className="bg-[#111111] px-6 py-20 sm:px-10 md:py-28 lg:px-16">
+      <section className="bg-white px-6 py-20 sm:px-10 md:py-28 lg:px-16">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-20">
 
           {/* Imagen */}
@@ -197,7 +135,7 @@ export default function EscuelaPage() {
             className="relative aspect-[4/3] overflow-hidden rounded-3xl"
           >
             <Image
-              src="/Educa/estu.jpg"
+              src="/Educa/1.jpg"
               alt="Estudiantes en capacitación"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -216,16 +154,16 @@ export default function EscuelaPage() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#2790ec]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#3258f0]">
               El conocimiento nunca se detiene
             </p>
             
-            <h2 className="mt-5 text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
+            <h2 className="mt-5 text-3xl font-bold leading-tight text-black sm:text-4xl md:text-5xl">
               Formación que conecta
-              <span className="text-[#2790ec]"> teoría y práctica.</span>
+              <span className="text-[#3258f0]"> teoría y práctica.</span>
             </h2>
 
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-black sm:text-lg">
               En Balsas Dental creemos que mantenerse actualizado es
               parte fundamental del crecimiento profesional. Por eso
               participamos en espacios de capacitación, cursos y
@@ -243,41 +181,36 @@ export default function EscuelaPage() {
 
         </div>
       </section>
-
-      {/* =====================================================
-          GALERÍA
-      ===================================================== */}
       {/* =====================================================
           MOMENTOS QUE DEJAN HUELLA
       ===================================================== */}
 
-      <section className="bg-[#111111] px-6 py-20 sm:px-10 md:py-28 lg:px-16">
+      <section className="bg-[#3258f0] px-6 py-20 sm:px-10 md:py-28 lg:px-16">
         <div className="mx-auto max-w-6xl">
 
           {/* ENCABEZADO */}
 
           <div className="mb-12 text-center md:mb-16">
 
-            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-[#2790ec]">
+            <span className="text-sm font-semibold uppercase tracking-[0.25em] text-white">
               Educación Continua
             </span>
 
             <h2 className="mt-4 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
               Momentos que
               <br />
-              <span className="text-[#2790ec]">
+              <span className="text-white">
                 dejan huella.
               </span>
             </h2>
 
-            <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-white/50 sm:text-base">
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-white/80 sm:text-base">
               Conoce algunos de los momentos que hemos compartido
               junto a estudiantes y profesionales de diferentes
               instituciones.
             </p>
 
           </div>
-
 
     {/* =================================================
         CARRUSEL DE UNIVERSIDADES
@@ -320,7 +253,6 @@ export default function EscuelaPage() {
               <div className="mt-6 hidden h-px w-16 bg-[#2790ec] md:block" />
 
             </div>
-
 
             {/* =========================================
                 CARRUSEL DE 4 FOTOS
@@ -398,26 +330,24 @@ export default function EscuelaPage() {
           </div>
         </section>
 
-
       {/* =====================================================
           ÁREAS DE FORMACIÓN
       ===================================================== */}
 
-      <section className="bg-[#f5f5f5] px-6 py-20 sm:px-10 md:py-28 lg:px-16">
+      <section className="bg-white px-6 py-20 sm:px-10 md:py-28 lg:px-16">
         <div className="mx-auto max-w-7xl">
 
           <div className="max-w-2xl">
-            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#2790ec]">
+            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#3258f0]">
               Educación
             </span>
 
             <h2 className="mt-4 text-4xl font-bold tracking-tight text-black sm:text-5xl">
               Tres formas de
               <br />
-              <span className="text-[#2790ec]">seguir creciendo.</span>
+              <span className="text-[#3258f0]">seguir creciendo.</span>
             </h2>
           </div>
-
 
           <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
 
@@ -428,7 +358,7 @@ export default function EscuelaPage() {
               transition={{ duration: 0.3 }}
               className="rounded-3xl bg-white p-8 shadow-sm"
             >
-              <span className="text-5xl font-bold text-[#2790ec]">
+              <span className="text-5xl font-bold text-[#3258f0]">
                 01
               </span>
 
@@ -442,11 +372,10 @@ export default function EscuelaPage() {
               </p>
             </motion.div>
 
-
             <motion.div
               whileHover={{ y: -8 }}
               transition={{ duration: 0.3 }}
-              className="rounded-3xl bg-[#2790ec] p-8"
+              className="rounded-3xl bg-[#3258f0] p-8"
             >
               <span className="text-5xl font-bold text-white/40">
                 02
@@ -462,13 +391,12 @@ export default function EscuelaPage() {
               </p>
             </motion.div>
 
-
             <motion.div
               whileHover={{ y: -8 }}
               transition={{ duration: 0.3 }}
               className="rounded-3xl bg-[#111111] p-8"
             >
-              <span className="text-5xl font-bold text-[#2790ec]">
+              <span className="text-5xl font-bold text-[#3258f0]">
                 03
               </span>
 
@@ -486,12 +414,11 @@ export default function EscuelaPage() {
         </div>
       </section>
 
-
       {/* =====================================================
           CTA
       ===================================================== */}
 
-      <section className="bg-[#111111] px-6 py-24 text-center sm:px-10 md:py-32">
+      <section className="bg-white px-6 py-24 text-center sm:px-10 md:py-32">
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -501,26 +428,25 @@ export default function EscuelaPage() {
           className="mx-auto max-w-3xl"
         >
 
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#2790ec]">
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#3258f0]">
             Sigue aprendiendo
           </span>
 
-          <h2 className="mt-5 text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
+          <h2 className="mt-5 text-4xl font-bold leading-tight text-black sm:text-5xl md:text-6xl">
             El siguiente paso
             <br />
-            <span className="text-[#2790ec]">
+            <span className="text-[#3258f0]">
               comienza aquí.
             </span>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/60">
+          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-black">
             Descubre nuestras próximas experiencias de formación,
             cursos y eventos de Educación Continua.
           </p>
-
           <a
-            href="/eventos"
-            className="mt-9 inline-block border border-[#2790ec] bg-[#2790ec] px-10 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-transparent hover:text-[#2790ec]"
+            href="/#eventos"
+            className="mt-9 inline-block border border-[#3258f0] bg-[#3258f0] px-10 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:bg-transparent hover:text-[#2790ec]"
           >
             Ver cursos
           </a>

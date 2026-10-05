@@ -6,14 +6,15 @@ import { AnimatePresence, motion } from "motion/react";
 interface Props {
   brand: {
     id: string;
-    name: string;
     slogan: string;
     description: string;
     logo: string;
     image: string;
+    image2:string;
     color: string;
     glow: string;
     link: string;
+    link2: string;
     pdf: string;
   };
 
@@ -42,9 +43,22 @@ export default function BrandExperience({
           z-[9999]
           overflow-y-auto
           bg-gradient-to-br
-          ${brand.color}
         `}
+        
       >
+         <Image
+            src={brand.image}
+            alt=""
+            fill
+            className="
+            object-cover
+            transition-transform
+            duration-700
+            group-hover:scale-105
+            "
+          />
+          
+         <div className="absolute inset-0 bg-black/55" />
 
         {/* =================================================
             GLOWS
@@ -77,7 +91,6 @@ export default function BrandExperience({
             blur-[120px]
           "
         />
-
 
         {/* =================================================
             CONTENIDO
@@ -112,45 +125,6 @@ export default function BrandExperience({
           >
             ← Regresar
           </motion.button>
-
-
-          {/* =================================================
-              LOGO
-          ================================================= */}
-
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: -20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.6,
-            }}
-            className="
-              mt-6
-              flex
-              justify-center
-            "
-          >
-            <Image
-              src={brand.logo}
-              alt={brand.name}
-              width={280}
-              height={120}
-              className="
-                h-auto
-                max-h-[100px]
-                w-auto
-                object-contain
-                drop-shadow-2xl
-              "
-            />
-          </motion.div>
-
 
           {/* =================================================
               CONTENIDO PRINCIPAL
@@ -188,29 +162,16 @@ export default function BrandExperience({
               }}
               className="text-center lg:text-left"
             >
-
+              
               <p className="
                 text-sm
                 font-semibold
                 uppercase
                 tracking-[0.2em]
-                text-white/60
+                text-white
               ">
                 {brand.slogan}
               </p>
-
-              <h1
-                className="
-                  mt-4
-                  text-4xl
-                  font-black
-                  leading-tight
-                  text-white
-                  md:text-5xl
-                "
-              >
-                {brand.name}
-              </h1>
 
               <p
                 className="
@@ -219,7 +180,8 @@ export default function BrandExperience({
                   max-w-xl
                   text-base
                   leading-relaxed
-                  text-white/90
+                  text-white
+                  font-bold
                   md:text-lg
                   lg:mx-0
                 "
@@ -228,7 +190,6 @@ export default function BrandExperience({
               </p>
 
             </motion.div>
-
 
             {/* =================================================
                 LADO DERECHO
@@ -262,16 +223,16 @@ export default function BrandExperience({
                 className="
                   relative
                   w-full
-                  max-w-[500px]
+                  max-w-[420px]
                   overflow-hidden
-                  rounded-[30px]
+                  rounded-[40px]
                   shadow-2xl
                 "
               >
 
                 <Image
-                  src={brand.image}
-                  alt={`${brand.name} - imagen`}
+                  src={brand.image2}
+                  alt={`${brand.image2} - imagen`}
                   width={900}
                   height={600}
                   className="
@@ -283,7 +244,6 @@ export default function BrandExperience({
                 />
 
               </motion.div>
-
 
               {/* =================================================
                   BOTONES
@@ -348,7 +308,6 @@ export default function BrandExperience({
                   </span>
                 )}
 
-
                 {/* LINK */}
 
                 {brand.link ? (
@@ -398,14 +357,68 @@ export default function BrandExperience({
                   </span>
                 )}
 
-              </div>
+                {/* LINK */}
 
+                {brand.link2 ? (
+                  <motion.a
+                    href={brand.link2}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{
+                      y: -3,
+                    }}
+                    whileTap={{
+                      scale: 0.97,
+                    }}
+                    className="
+                      min-w-[120px]
+                      rounded-xl
+                      bg-white
+                      px-6
+                      py-3
+                      text-center
+                      text-sm
+                      font-semibold
+                      text-blue-700
+                      shadow-lg
+                      transition
+                      hover:shadow-xl
+                    "
+                  >
+                    Adquiere sus productos!
+                  </motion.a>
+                ) : (
+                  <span
+                    className="
+                      min-w-[120px]
+                      cursor-not-allowed
+                      rounded-xl
+                      bg-white/30
+                      px-6
+                      py-3
+                      text-center
+                      text-sm
+                      font-semibold
+                      text-white/60
+                    "
+                  >
+                    Adquiere sus productos!
+                  </span>
+                )}
+
+              </div>
+              
             </motion.div>
 
+            <div className="text-white font-base text-xs text-center uppercase">
+                <p><strong>¡Recuerda!</strong> si tienes alguna duda de los productos de la marca que maneja Balsas Dental
+                Dirijete con uno de nuestros asesores.</p>
+              </div>
+              <div>
+                <a href=""></a>
+              </div>
           </div>
-
         </div>
-
       </motion.div>
     </AnimatePresence>
   );

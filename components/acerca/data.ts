@@ -17,7 +17,7 @@ export const history = [
     year: "2024",
     title: "Expansión",
     text:
-      "Fortalecemos nuestra presencia y cobertura, distribuyendo +15 marcas a lo largo de toda la republica mexicana.",
+      "Fortalecemos nuestra cobertura, distribuyendo +15 marcas en toda la republica mexicana.",
   },
 
   {

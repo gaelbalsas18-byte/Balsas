@@ -4,6 +4,7 @@ import FadeIn from "../animations/FadeIn";
 import Image from "next/image";
 import EventosContent from "@/components/eventos/EventosContent";
 import { Manrope } from "next/font/google";
+import { motion } from "motion/react";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -21,35 +22,29 @@ export default function Evento() {
       {/* ENCABEZADO */}
       {/* ===================== */}
 
-      <div className={`${manrope.className} mt-3 text-center`}>
-        <span className="inline-block rounded-full bg-[#0057b8] px-6 py-2 text-sm font-semibold text-white sm:text-base">
-          EVENTOS
-        </span>
-      </div>
+      <motion.div
+        initial={{ opacity: 0, y: -25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.7 }}
+        className="mb-10 text-center"
+      >
 
+        <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.35em] text-[#244adf]/60">
+          BALSAS DENTAL
+        </p>
 
-      {/* ===================== */}
-      {/* TEXTO INTRODUCTORIO */}
-      {/* ===================== */}
+        <h2 className="text-3xl font-bold tracking-tight text-[#1736a8] sm:text-4xl">
+          Eventos
+        </h2>
 
-      <div className={`${manrope.className} mt-14 px-5 text-center sm:mt-10`}>
+        <div className="mx-auto mt-4 h-[2px] w-14 rounded-full bg-[#244adf]" />
 
-        <span
-          className="
-            inline-block
-            text-2xl
-            font-bold
-            tracking-wide
-            text-[#2790ec]
-            sm:text-3xl
-            md:text-4xl
-          "
-        >
-          ¡NO TE PIERDAS DE NUEVAS EXPERIENCIAS!
-        </span>
+        <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-gray-500">
+          Enterate de los cursos que Balsas Dental tiene para ti.
+        </p>
 
-      </div>
-
+      </motion.div>
 
       <div
         className={`

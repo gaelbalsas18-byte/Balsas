@@ -52,16 +52,8 @@ export default function NovedadModal({
               src={novedad.imagen}
               alt={novedad.titulo}
               fill
-              className="object-cover"
+              className="object-contain"
              />
-          </div>
-
-          <div className="absolute h-12 w-50 translate-x-6">
-            <Image
-            src={novedad.logo}
-            alt={novedad.marca}
-            fill
-            className="object-contain object-left"/>
           </div>
           
           {/* Información */}

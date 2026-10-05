@@ -3,17 +3,17 @@
 import { useState } from "react";
 import IntroBrands from "@/components/Productos/IntroBrands";
 import BrandGrid from "@/components/Productos/BrandGrid";
-import Assistant from "@/components/AsistenteIA/Assistant";
-import { Category } from "@/components/Productos/CategoryFilter";
 import Footer from "@/components/sections/Footer";
+import AssistantButton from "@/components/AsistenteIA/AssistantButton";
+import AssistantOverlay from "@/components/AsistenteIA/AssistantOverlay";
 
 export default function Productos() {
 
-  const [selectedCategory, setSelectedCategory] =
-    useState<Category>("all");
-    const [universo, setUniverso] = useState("");
-    const [especialidad, setEspecialidad] = useState("");
-    const [necesidad, setNecesidad] = useState("");
+  const [universo, setUniverso] = useState("");
+  const [especialidad, setEspecialidad] = useState("");
+  const [necesidad, setNecesidad] = useState("");
+
+  const [assistantOpen, setAssistantOpen] = useState(false);
 
   return (
     <>
@@ -33,9 +33,21 @@ export default function Productos() {
         necesidad={necesidad}
       />
 
-      <Assistant />
-      
-      <Footer/>
+      <Footer />
+
+      {/* Botón flotante */}
+
+      <AssistantButton
+        onClick={() => setAssistantOpen(true)}
+      />
+
+      {/* Capa del asistente */}
+
+      <AssistantOverlay
+        open={assistantOpen}
+        onClose={() => setAssistantOpen(false)}
+      />
+
     </>
   );
 }

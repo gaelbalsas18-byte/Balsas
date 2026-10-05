@@ -21,7 +21,7 @@ export default function TimelineItem({
     <motion.div
       initial={{
         opacity: 0,
-        y: 80,
+        y: 60,
       }}
       whileInView={{
         opacity: 1,
@@ -29,90 +29,105 @@ export default function TimelineItem({
       }}
       viewport={{
         once: true,
-        amount: 0.35,
+        amount: 0.3,
       }}
       transition={{
         duration: 0.7,
-        delay: index * 0.18,
+        delay: index * 0.15,
+        ease: "easeOut",
       }}
-      whileHover={{
-        y: -12,
-      }}
-      className="relative text-center"
+      className="relative pt-12 md:pt-0"
     >
       {/* Punto */}
+      <div className="relative z-20 flex justify-center">
+        <motion.div
+          whileHover={{
+            scale: 1.15,
+          }}
+          transition={{
+            duration: 0.3,
+          }}
+          className={`relative flex items-center justify-center rounded-full border-4 border-white bg-blue-700 shadow-lg shadow-blue-700/20 ${
+            highlight ? "h-16 w-16" : "h-14 w-14"
+          }`}
+        >
+          {/* Pulso para el año actual */}
+          {highlight && (
+            <motion.div
+              animate={{
+                scale: [1, 1.4, 1],
+                opacity: [0.4, 0, 0.4],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute inset-0 rounded-full bg-blue-500"
+            />
+          )}
 
-      <motion.div
-        whileHover={{
-          scale: 1.25,
-          boxShadow: "0px 0px 35px rgba(37,99,235,.45)",
-        }}
-        transition={{
-          duration: .35,
-        }}
-        className={`
-          absolute
-          left-1/2
-          top-0
-          -translate-x-1/2
-          rounded-full
-          bg-blue-800
-          ring-8
-          ring-blue-100
-          ${
-            highlight
-              ? "h-12 w-12"
-              : "h-10 w-10"
-          }
-        `}
-      />
+          <div className="relative h-3 w-3 rounded-full bg-white" />
+        </motion.div>
+      </div>
 
       {/* Tarjeta */}
-
       <motion.div
         whileHover={{
-          scale: 1.03,
+          y: -8,
         }}
-        className="
-          pt-20
-          rounded-3xl
-          px-6
-          py-8
-          transition-all
-          duration-500
-        "
+        transition={{
+          duration: 0.3,
+          ease: "easeOut",
+        }}
+        className={`relative mt-7 rounded-3xl border bg-white px-6 py-7 shadow-sm transition-shadow duration-300 hover:shadow-xl ${
+          highlight
+            ? "border-blue-200 shadow-lg shadow-blue-100/60"
+            : "border-slate-100"
+        }`}
       >
+        {/* Actualidad */}
+        {highlight && (
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-blue-700 px-4 py-1 text-xs font-bold tracking-widest text-white shadow-lg shadow-blue-700/20">
+            ACTUALIDAD
+          </div>
+        )}
+
+        {/* Año */}
+        <div className="flex items-center justify-center">
+          <span
+            className={`font-black tracking-tight ${
+              highlight
+                ? "text-4xl text-blue-700"
+                : "text-3xl text-slate-900"
+            }`}
+          >
+            {year}
+          </span>
+        </div>
+
+        {/* Línea */}
+        <div
+          className={`mx-auto mt-4 h-1 rounded-full ${
+            highlight
+              ? "w-16 bg-blue-700"
+              : "w-10 bg-slate-200"
+          }`}
+        />
+
+        {/* Título */}
         <h3
-          className={`
-            font-black
-            text-blue-700
-
-            ${
-              highlight
-                ? "text-4xl"
-                : "text-3xl"
-            }
-          `}
-        >
-          {year}
-        </h3>
-
-        <h4
-          className={`
-            mt-4
-            text-slate-900
-
-            ${
-              highlight
-                ? "text-2xl font-black"
-                : "text-2xl font-bold"
-            }
-          `}
+          className={`mt-5 text-center ${
+            highlight
+              ? "text-2xl font-black text-slate-900"
+              : "text-xl font-bold text-slate-900"
+          }`}
         >
           {title}
-        </h4>
+        </h3>
 
-        <p className="mt-6 leading-8 text-black">
+        {/* Descripción */}
+        <p className="mt-4 text-center text-sm leading-7 text-slate-500 sm:text-base">
           {text}
         </p>
       </motion.div>

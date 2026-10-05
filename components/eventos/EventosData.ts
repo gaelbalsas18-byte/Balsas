@@ -14,7 +14,7 @@ export const eventos: Evento[] = [
       "Balsas Dental.",
     contenido:
       "En este evento encontraras los mejores precios asi como tambien podras aprender de nuevas tecnicas dentales.",
-    imagen: "/eventos/evento-1.jpg",
+    imagen: "/Eventos/Amic/Amic3.jpeg",
   },
 
   {
@@ -30,7 +30,7 @@ export const eventos: Evento[] = [
       "Deposito Xola",
     contenido:
       "Tokuyama Composite Experience - Dominio de la estratificación en sector anterior y posterior",
-    imagen: "/eventos/evento-1.jpg",
+    imagen: "/Eventos/Tokuexp2.png",
     marca: "Tokuyama",
   },
 
