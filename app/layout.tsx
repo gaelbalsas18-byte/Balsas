@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ChatAssistant from "@/components/Chatbot/ChatAssistant";
 import { Children } from "react";
 import Navbar from "@/components/Navbar/Navbar";
 import { Manrope } from "next/font/google";
@@ -25,6 +24,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Balsas Dental",
   description: "Balsas Dental",
+  icons: {
+    icon: "logos/Balsas.png"
+  }
 };
 
 export default function RootLayout({
