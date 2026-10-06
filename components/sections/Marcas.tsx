@@ -103,6 +103,7 @@ export default function Marcas() {
               : "pointer-events-none opacity-0"
           }`}
         >
+
           <Image
             src={marca.imagen}
             alt=""
@@ -112,6 +113,7 @@ export default function Marcas() {
             className="object-cover object-center md:object-center"
             />
         </div>
+        
       ))}
 
       {/* =====================================================

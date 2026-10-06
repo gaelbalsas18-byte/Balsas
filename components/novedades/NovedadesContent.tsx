@@ -44,7 +44,7 @@ const novedades: Novedad[] = [
     titulo: "Nuevo Omnicrhoma",
     descripcion:
       "Es el primer compuesto universal del mundo que combina estéticamente a casi todos los pacientes con un solo tono. Sus rellenos supra-nano esféricos de tamaño uniforme permiten a PALFIQUE OMNICHROMA combinar todos los tonos, una ciencia que llamamos Tecnología Cromática Inteligente.",
-    imagen: "/novedades/Omnicrhoma.jpg",
+    imagen: "/Novedades/Omnicrhoma.jpg",
     logo: "/logos/marcas/tokuyama.png",
   },
 
@@ -58,7 +58,7 @@ const novedades: Novedad[] = [
     titulo: "Care B&C",
     descripcion:
       "El producto dental Vericom Care C y B está diseñado para facilitar su uso. Su proceso de aplicación intuitivo reduce el tiempo en la silla, beneficiando tanto al dentista como al paciente. Con una adaptabilidad superior, logra una estética impresionante. Esto la hace ideal para clínicas que buscan altos estándares.",
-    imagen: "/novedades/Care.jpg",
+    imagen: "/Novedades/Care.jpg",
     logo: "/logos/marcas/ver.jpg",
   },
 
