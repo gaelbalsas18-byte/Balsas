@@ -209,21 +209,19 @@ export default function EventosCalendar({
           ENCABEZADO
       ================================================= */}
 
-      <div
-        className="
-          relative
-          overflow-hidden
-          bg-gradient-to-br
-          from-[#1449e8]
-          via-[#1976ee]
-          to-[#2790ec]
-          px-6
-          py-7
-          md:px-8
-          md:py-8
-        "
-      >
-
+          
+        <div
+          className="
+            relative
+            overflow-hidden
+            calendar-animated-gradient
+            px-6
+            py-7
+            md:px-8
+            md:py-8
+          "
+        >
+          
         {/* Glow */}
 
         <div

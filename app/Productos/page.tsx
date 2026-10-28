@@ -4,8 +4,9 @@ import { useState } from "react";
 import IntroBrands from "@/components/Productos/IntroBrands";
 import BrandGrid from "@/components/Productos/BrandGrid";
 import Footer from "@/components/sections/Footer";
-import AssistantButton from "@/components/AsistenteIA/AssistantButton";
-import AssistantOverlay from "@/components/AsistenteIA/AssistantOverlay";
+{/*import AssistantButton from "@/components/AsistenteIA/AssistantButton";*/}
+{/*import AssistantOverlay from "@/components/AsistenteIA/AssistantOverlay";*/}
+{/* PAra que agarre el boton de la IA quitar los comentarios de los import y de los Botones */}
 
 export default function Productos() {
 
@@ -37,16 +38,18 @@ export default function Productos() {
 
       {/* Botón flotante */}
 
-      <AssistantButton
+      {/*<AssistantButton
         onClick={() => setAssistantOpen(true)}
       />
+      */}
 
       {/* Capa del asistente */}
 
-      <AssistantOverlay
+      {/* <AssistantOverlay
         open={assistantOpen}
         onClose={() => setAssistantOpen(false)}
       />
+      */}
 
     </>
   );

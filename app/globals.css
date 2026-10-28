@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -115,4 +114,44 @@ body {
         opacity:1;
     }
 
+}
+
+/* Degradado azul animado del encabezado del calendario */
+.calendar-animated-gradient {
+  background: linear-gradient(
+    120deg,
+    #123bc4 0%,
+    #0c48f9 10%,
+    #1449e8 20%,
+    #1976ee 40%,
+    #38bdf8 60%,
+    #5095f0b4 80%,
+    #89a0ee89 100%
+  );
+
+  background-size: 400% 400%;
+  animation: calendarBlueFlow 8s linear infinite;
+  will-change: background-position;
+}
+
+@keyframes calendarBlueFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Respetar la preferencia de reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .calendar-animated-gradient {
+    animation: none;
+    background-position: 50% 50%;
+  }
 }
