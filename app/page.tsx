@@ -1,5 +1,5 @@
 "use client";
-
+import IntroVideo from "@/components/introvideo/introvideo";
 import Hero from "@/components/Hero/Hero";
 import Marcas from "@/components/sections/Marcas";
 import Evento from "@/components/sections/Eventos";
@@ -10,6 +10,7 @@ import Extra from "@/components/sections/Extra";
 export default function Home() {
   return (
     <>
+     <IntroVideo />
         <Hero/>
           <Novedades/>
              <Evento/>
