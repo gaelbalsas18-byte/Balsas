@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -6,6 +5,8 @@ import FadeIn from "../animations/FadeIn";
 import { Manrope } from "next/font/google";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Loader from "@/components/Loader/Loader";
+import { useState } from "react";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -13,6 +14,7 @@ const manrope = Manrope({
 });
 
 export default function Novedades() {
+  const [cargando, setCargando] = useState(false);
   return (
     <section className="w-full overflow-hidden bg-white py-16 sm:py-20 md:py-24">
       <div className="mx-auto w-full max-w-5xl px-5 sm:px-8">
@@ -148,7 +150,6 @@ export default function Novedades() {
               </div>
             </FadeIn>
 
-
           </div>
 
           {/* =================================
@@ -193,17 +194,21 @@ export default function Novedades() {
             BOTÓN
         ================================= */}
          <FadeIn>
-           <div className="text-center">
-              <Link href="/novedades">
-                  <button className="mt-12 inline-block border border-blue-700 bg-white px-10 py-3 text-sm uppercase tracking-wide text-blue-700 transition-all duration-300 hover:bg-blue-700 hover:text-white">
-                     Novedades
-                  </button>
-                 </Link>
-              </div>
-          </FadeIn>
-
+           <div className="text-center mt-10">
+               <Link
+                  href="/novedades"
+                  onClick={(e) => {
+                  e.preventDefault();
+                  setCargando(true);
+                  }}
+                  className="inline-block border border-blue-600 bg-transparent px-10 py-3 text-sm uppercase tracking-wide text-blue-600 transition-all duration-300 hover:bg-blue-600 hover:text-white"
+                  >
+                   Novedades
+            </Link>
+          </div>
+        </FadeIn>
       </div>
+      <Loader isLoading={cargando} destination="/novedades" />
     </section>
   );
 }
-

@@ -1,26 +1,35 @@
-
 "use client";
 
 import { useEffect, useState } from "react";
 
 export default function IntroVideo() {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
+    const introVisto = sessionStorage.getItem("balsas_intro_visto");
+
+    if (!introVisto) {
+      sessionStorage.setItem("balsas_intro_visto", "true");
+      setVisible(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!visible) return;
+
     document.body.style.overflow = "hidden";
 
     return () => {
       document.body.style.overflow = "";
     };
-  }, []);
+  }, [visible]);
 
   const finalizarIntro = () => {
     setFadeOut(true);
 
     setTimeout(() => {
       setVisible(false);
-      document.body.style.overflow = "";
     }, 1200);
   };
 
@@ -28,9 +37,9 @@ export default function IntroVideo() {
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] bg-black flex items-center justify-center transition-opacity duration-[1400ms] ease-in-out ${
-        fadeOut ? "opacity-0" : "opacity-100"
-      }`}
+      className={`fixed inset-0 z-[9999] flex items-center justify-center
+      bg-[#0D64FF] transition-opacity duration-[1200ms] ease-in-out
+      ${fadeOut ? "opacity-0" : "opacity-100"}`}
     >
       <video
         src="/intro-balsas.mp4"

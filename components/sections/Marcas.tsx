@@ -1,4 +1,3 @@
-
 "use client";
 
 import FadeIn from "../animations/FadeIn";
@@ -6,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Manrope } from "next/font/google";
+import Loader from "@/components/Loader/Loader";
+
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -76,12 +77,11 @@ const marcas = [
 
 export default function Marcas() {
   const [marcaActiva, setMarcaActiva] = useState(0);
-
+  const [cargando, setCargando] = useState(false);
   useEffect(() => {
     const intervalo = setInterval(() => {
       setMarcaActiva((actual) => (actual + 1) % marcas.length);
     }, 5000);
-
     return () => clearInterval(intervalo);
   }, []);
 
@@ -163,17 +163,18 @@ export default function Marcas() {
           {/* =================================================
               BOTÓN
               ================================================= */}
-
-          <FadeIn>
-            <div className="translate-y-45">
-              <Link href="/Productos">
-                <button className="inline-block border border-white bg-transparent px-10 py-3 text-sm uppercase tracking-wide text-white transition-all duration-300 hover:bg-white hover:text-blue-700">
-                  Ver Marcas
-                </button>
-              </Link>
-            </div>
-          </FadeIn>
-
+              <div className="translate-y-45">
+                    <Link
+                        href="/Productos"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setCargando(true);
+                        }}
+                        className="inline-block border border-white bg-transparent px-10 py-3 text-sm uppercase tracking-wide text-white transition-all duration-300 hover:bg-white hover:text-blue-700"
+                      >
+                        Ver Marcas
+                      </Link>
+              </div>
           {/* =================================================
               INDICADORES
               ================================================= */}
@@ -194,7 +195,8 @@ export default function Marcas() {
           </div>
         </div>
       </div>
+
+     <Loader isLoading={cargando} destination="/Productos" />
     </section>
   );
 }
-
