@@ -30,7 +30,7 @@ export default function IntroVideo() {
 
     setTimeout(() => {
       setVisible(false);
-    }, 1200);
+    }, 1050);
   };
 
   if (!visible) return null;
