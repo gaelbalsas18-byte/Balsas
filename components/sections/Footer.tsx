@@ -3,6 +3,8 @@
 import FadeIn from "../animations/FadeIn";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import Loader from "@/components/Loader/Loader";
 import {
   FaFacebookF,
   FaInstagram,
@@ -16,8 +18,26 @@ const manrope = Manrope({
 });
 
 export default function Footer() {
+  const [destino, setDestino] = useState<string | null>(null);
+  const [abrirPrivacidad, setAbrirPrivacidad] = useState(false);
+      useEffect(() => {
+      if (!abrirPrivacidad) return;
+
+      const timer = setTimeout(() => {
+        window.open(
+          "https://drive.google.com/file/d/1Lie7jZxEnGMorJqysOfNjVMooc_w6z4M/view?usp=sharing",
+          "_blank",
+          "noopener,noreferrer"
+        );
+
+        setAbrirPrivacidad(false);
+      }, 2500);
+
+      return () => clearTimeout(timer);
+    }, [abrirPrivacidad]);
   return (
     <footer
+    
   id="footer"
   className={`${manrope.className} relative w-full overflow-hidden text-white`}
 >
@@ -132,8 +152,12 @@ export default function Footer() {
               <ul className="mt-6 space-y-4">
 
                 <li>
-                  <Link
+                 <Link
                     href="/acerca"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setDestino("/acerca");
+                    }}
                     className="group flex items-center text-sm text-white/70 transition-all duration-300 hover:text-white"
                   >
                     <span className="mr-2 text-[#2790ec] opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100">
@@ -187,6 +211,10 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/distribucion"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setDestino("/distribucion");
+                    }}
                     className="group flex items-center text-sm text-white/60 transition-all duration-300 hover:text-white"
                   >
                     <span className="mr-2 text-[#2790ec] opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100">
@@ -220,9 +248,13 @@ export default function Footer() {
 
                 <li>
                   <Link
-                    href="/Escuela"
-                    className="group flex items-center text-sm text-white/60 transition-all duration-300 hover:text-white"
-                  >
+                      href="/Escuela"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setDestino("/Escuela");
+                      }}
+                      className="group flex items-center text-sm text-white/60 transition-all duration-300 hover:text-white"
+                    >
                     <span className="mr-2 text-[#2790ec] opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100">
                       →
                     </span>
@@ -254,9 +286,11 @@ export default function Footer() {
 
                 <li>
                   <Link
-                    href="https://drive.google.com/file/d/1Lie7jZxEnGMorJqysOfNjVMooc_w6z4M/view?usp=sharing"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                   href="https://drive.google.com/file/d/1Lie7jZxEnGMorJqysOfNjVMooc_w6z4M/view?usp=sharing"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setAbrirPrivacidad(true);
+                    }}
                     className="group flex items-center text-sm text-white/60 transition-all duration-300 hover:text-white"
                   >
                     <span className="mr-2 text-[#2790ec] opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100">
@@ -267,6 +301,7 @@ export default function Footer() {
                       Aviso de privacidad
                     </span>
                   </Link>
+
                 </li>
 
               </ul>
@@ -321,7 +356,10 @@ export default function Footer() {
       </div>
 
         </div>
-
+          <Loader
+            isLoading={destino !== null || abrirPrivacidad}
+            destination={destino ?? undefined}
+          />
     </footer>
   );
 }
